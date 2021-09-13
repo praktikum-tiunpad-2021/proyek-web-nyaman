@@ -36,17 +36,17 @@
 <!-- Fungsi -->
 ## Fungsi
 
-TO;DO
+Website untuk membuat reservasi kamar hotel.
 
 <!-- Tujuan -->
 ## Tujuan
 
-TO;DO
+Mempermudah pengguna dalam proses pemesanan kamar hotel.
 
 <!-- Target Pengguna -->
 ## Target Pengguna
 
-TO;DO
+Masyarakat umum yang sedang bepergian dan membutuhkan kamar hotel.
 
 <!-- Mockup Kasar -->
 ## Mockup Kasar
