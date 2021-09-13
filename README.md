@@ -27,11 +27,11 @@
 
 <!-- Anggota Tim -->
 ## Anggota Tim
-| NPM           | Name        |
-| ------------- |-------------|
-| 140810xx00xx  | John Doe    |
-| 140810xx00xx  | Jane Doe    |
-| 140810xx00xx  | Janie Doe   |
+| NPM           | Name                              |
+| ------------- |-----------------------------------|
+| 140810200043  | Johanes Bagus Prasetyo            |
+| 140810200047  | Kharisma Fitri Nurunnisa Siahaan  |
+| 140810200065  | Hanifan Ayusti Khairunnisa        |
 
 <!-- Fungsi -->
 ## Fungsi
