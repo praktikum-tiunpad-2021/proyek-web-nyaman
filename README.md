@@ -5,10 +5,10 @@
     <img src="logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Judul Proyek</h3>
+  <h3 align="center">NYAMAN</h3>
 
   <p align="center">
-    Deskripsi Proyek
+    Website untuk reservasi kamar hotel
   </p>
 </p>
 
