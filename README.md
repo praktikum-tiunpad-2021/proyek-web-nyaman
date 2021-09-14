@@ -51,11 +51,9 @@ Masyarakat umum yang sedang bepergian dan membutuhkan kamar hotel.
 <!-- Mockup Kasar -->
 ## Mockup Kasar
 
-TO;DO
-
-Gambar mockup di sini atau [link figma](https://figma.com/).
+https://www.figma.com/file/oiCZgjMfT5uTzMdBUxGie9/Nyaman?node-id=3%3A4
 
 <!-- Skema Database -->
 ## Skema Database
 
-TO;DO
+<img src=database.png  width="120" height="100">
