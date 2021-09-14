@@ -56,4 +56,4 @@ https://www.figma.com/file/oiCZgjMfT5uTzMdBUxGie9/Nyaman?node-id=3%3A4
 <!-- Skema Database -->
 ## Skema Database
 
-<img src=database.png  width="120" height="100">
+<img src=database.png  width="1200" height="1200">
