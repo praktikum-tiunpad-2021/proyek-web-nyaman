@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="logo.png" alt="Logo" width="80" height="80">
+    <img src="img/logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">NYAMAN</h3>
@@ -56,4 +56,4 @@ https://www.figma.com/file/oiCZgjMfT5uTzMdBUxGie9/Nyaman?node-id=3%3A4
 <!-- Skema Database -->
 ## Skema Database
 
-<img src="data.png"  width="480" height="360">
+<img src="img/data.png"  width="480" height="360">
