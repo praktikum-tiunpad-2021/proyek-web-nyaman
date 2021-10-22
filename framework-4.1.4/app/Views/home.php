@@ -1,7 +1,7 @@
 <?= $this->extend('/base'); ?>
 <?= $this->section('content'); ?>
 
-<div class="container-isi">
+<div class="main">
     <div class="bg-home shadow isi-home-1 kotak">
         <div class="">
             <a href="/">

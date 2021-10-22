@@ -316,7 +316,7 @@
         <div class="container">
         <div class="row"style="background-color:black">
             <div class="col-sm-4">
-            <?php echo img('assets/logoterang.png');?> </div>
+            <?php echo img('assets/img/logoterang.png');?> </div>
                 <div class="col-sm-3"><p style="color:#FFD700;font-family:'Comfortaa';font-size:36px;text-align: center;">Beranda</p></div>
                 <div class="col-sm-3"><p style="color:#FFD700;font-family:'Comfortaa';font-size:36px;text-align: center;">Reservasi </p></div>
                 <div class="col-sm-3"><p style="color:#FFD700;font-family:'Comfortaa';font-size:36px;text-align: center;">Login</p></div>
@@ -328,11 +328,11 @@
     <body><br><br>
     <div class="row">
     <div class="col-4 text-left">
-    <?php echo img('assets/hotel.jpg');?>
+    <?php echo img('assets/img/hotel.jpg');?>
     <div class="col-4 text-center">
-    <?php echo img('assets/hotel2.jpg');?>
+    <?php echo img('assets/img/hotel2.jpg');?>
     <div class="col-4 text-right">
-    <?php echo img('assets/hotel3.jpg');?>
+    <?php echo img('assets/img/hotel3.jpg');?>
     </div>
     <div class="row">
         <div class="col-4 text-left">
@@ -343,9 +343,9 @@
     <input type="button" id="book3"value="Book Now!"></div>
     </div>
     <div class="row">
-    <?php echo img('assets/hotel4.jpg');?>
-    <?php echo img('assets/hotel5.jpg');?>
-    <?php echo img('assets/hotel6.jpg');?><br>
+    <?php echo img('assets/img/hotel4.jpg');?>
+    <?php echo img('assets/img/hotel5.jpg');?>
+    <?php echo img('assets/img/hotel6.jpg');?><br>
     <div class="row">
       <div class="col-4 text-left">
     <input type="button" id="book4"value="Book Now!"></div>

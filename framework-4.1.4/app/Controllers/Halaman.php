@@ -16,4 +16,8 @@ class Halaman extends BaseController
     {
         return view('halamanAwal');
     }
+    public function listKamar()
+    {
+        return view('page/listKamar');
+    }
 }
