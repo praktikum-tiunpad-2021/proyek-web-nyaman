@@ -2,8 +2,8 @@
 <?= $this->section('content'); ?>
 
 <div class="main">
-    <div class="judul-listkamar">
-        <center><h1>List Kamar</h1></center>
+    <div class="pt-2">
+        <center><h1>LIST KAMAR</h1></center>
         <hr>
     </div>
     <div class = "kotak-3">
