@@ -35,6 +35,7 @@ $routes->get('/', 'Home::index');
 $routes->get('/list-kamar', 'Halaman::listKamar');
 $routes->get('/Awal', 'Halaman::viewAwal');
 $routes->get('/Login', 'Halaman::viewLogin');
+$routes->get('/Rekomendasi', 'Halaman::viewRekomendasi');
 /*
  * --------------------------------------------------------------------
  * Additional Routing
