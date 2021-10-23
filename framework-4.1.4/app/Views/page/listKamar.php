@@ -15,7 +15,7 @@
                     <img src="assets/img/deluxe-room.jpeg" alt="nyaman"  class="img-thumbnail img-list"> 
                 </div>
                 <a href="#">
-                    <button class="btn"> Book Now!</button>
+                    <button class="btn shadow"> Book Now!</button>
                 </a>        
             </div>
         
