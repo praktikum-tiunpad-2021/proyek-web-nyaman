@@ -10,7 +10,7 @@ class Halaman extends BaseController
     }
      public function viewLogin()
     {
-        return view('login');
+        return view('page/login');
     }
     public function viewAwal()
     {
