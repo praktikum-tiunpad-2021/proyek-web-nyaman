@@ -8,6 +8,7 @@
     <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
     <link rel="stylesheet" href="<?= base_url('assets/css/style.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap-grid.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap-utilities.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/form.css') ?>">
 </head>
 <body>

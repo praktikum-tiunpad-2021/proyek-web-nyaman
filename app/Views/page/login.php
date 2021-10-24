@@ -14,14 +14,17 @@
         <div class="col">
             <div class="kotak-login">
                 <form method="post">
-                    <center><h1>Login</h1></center> <br>
+                    <h1 class="text-center">Login</h1><br>
                     <label for="username">Username</label>
                     <input type="text"name="username"id="username" class="form-control" require><br>
                     <label for="password">Password</label>
                     <input type="password" name="password" id="password" class="form-control" require> <br>
-                    <center><input type="submit" name="Submit" class="col-4 btn-login"></center>
+                    <div class="d-flex justify-content-center mt-2">
+                        <input type="submit" name="Submit" class="col-4 btn-login">
+                    </div>    
+                    
                     <br>
-                    <center><p>dont have account? <a href="#">register here</a></p></center>
+                    <p class>Don't have an account? <b><a href="#">Sign Up</a></b></p>
                 </form>
             </div>
         </div>    
