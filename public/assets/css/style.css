@@ -1,0 +1,253 @@
+*{
+    margin: 0 0 0 0;
+    font-family: 'Comfortaa';
+}
+
+hr{
+    margin: 0 16px;
+}
+
+img {
+    float: left;
+    max-width: 100%;
+    height: auto;
+}
+
+.clearfix{
+    clear: both;
+    content: "";
+}
+
+.kotak{
+    display: grid;
+    justify-content: space-evenly;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+    padding:10px;
+}
+
+.kotak > div {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.kotak-3{
+    display: grid;
+    justify-content: space-evenly;
+    grid-template-columns: 33% auto auto auto;
+    grid-gap: 8px;
+    padding:8px;
+}
+
+.kotak-3 > div {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.img-thumbnail {
+    padding: 0.25rem;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    max-width: 100%;
+    height: auto;
+    margin-right: 16px;
+}
+
+.shadow {
+    box-shadow: 0.1rem 0.1rem 0.5rem 0.1rem rgba(105, 48, 48, 0.2) !important;
+}
+
+.main {
+    margin-top: 65px;
+}
+
+.container-isi{
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.mt-2{
+    margin-top: 4rem;
+}
+
+.mx-1{
+    margin-inline: 1rem;
+}
+
+
+
+.p-2{
+    padding: 2rem;
+}
+
+.pt-2{
+    padding-top: 2rem;
+}
+
+
+/*ini bagian nav*/
+
+.topnav{
+    overflow: hidden;
+    position: fixed;
+    background-color: black;
+    height: max-content;
+    padding: 8px;
+    top: 0;
+    width: 100%;
+}
+
+.topnav a {
+    float: right;
+    color: #FFD700;
+    text-align: center;
+    padding: 16px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    border-bottom-right-radius: 16px;
+}
+
+.topnav a:hover {
+    color: antiquewhite;
+}
+
+.logo{
+
+}
+
+/*ini bagian home*/
+.isi-home-1{
+    padding-top: 75px;
+    padding-bottom: 75px;
+}
+
+.text{
+    margin: 4%;
+    padding: 15% 3%;
+    word-spacing: 10px;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    text-align: center;
+    color: whitesmoke;
+}
+.bg-home {
+    background-image: url("hotel1.png");
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+.isi-home-2{
+    border-radius: 25px;
+    background: white;
+    padding: 16px;
+    height: fit-content;
+    margin: 2rem;
+}
+
+p{
+    margin: 0 16px;
+}
+
+.text-isi{
+    text-align: justify;
+}
+
+/*bagian list kamar*/
+.judul-listkamar{
+    padding-top: 2rem;
+}
+
+.isi-list{
+    border-radius: 25px;
+    background: white;
+    padding: 16px;
+    height: fit-content;
+    margin: 1rem 1rem 0 1rem;
+}
+
+.img-list{
+    width: 90%;
+    margin: 0 3.5%;
+}
+
+.text-list{
+    text-align: center;
+}
+
+.kotak-3{
+    display: grid;
+    justify-content: space-evenly;
+    grid-template-columns: 33% 33% 33%;
+    grid-gap: 8px;
+    padding: 16px;
+}
+
+.kotak-3 a{
+    text-decoration: none;
+    color: black;
+}
+
+.kotak-3 > div {
+    text-align: center;
+    padding: 16px 0;
+}
+
+.btn{
+    width: 60%;
+    padding: 16px 32px;
+    margin: 8px 8% 0;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background-color: #41B3D3;
+}
+.btn:hover{
+    background-color: #4ed3f8;
+}
+
+/* ini buat login/register */
+.bg-login{
+    background-image: url(bg-full.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+.kotak-login{
+    margin: 16% 3%;
+    width: 75%;
+    background: #404040;
+    border-radius: 16px;
+    padding: 32px 24px;
+    color: #fff;
+}
+
+a {
+    color: #FFD31A;
+}
+
+.btn-login{
+    background-color: #FFD31A;
+    padding: 8px;
+    border-radius: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-login:hover{
+    background-color: #ffe16b;
+}
+
+.btn-login:active {
+    background-color: #ffe16b;
+    /* box-shadow: 0 5px #fff; */
+    transform: translateY(3px);
+}
+
+.logo-login{
+    margin: 23% 25%;
+}
