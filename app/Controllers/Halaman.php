@@ -8,9 +8,9 @@ class Halaman extends BaseController
     {
         return view('page/login');
     }
-    public function viewAwal()
+    public function viewSearch()
     {
-        return view('halamanAwal');
+        return view('page/search');
     }
     public function listKamar()
     {

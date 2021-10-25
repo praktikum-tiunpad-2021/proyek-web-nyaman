@@ -33,7 +33,7 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('/list-kamar', 'Halaman::listKamar');
-$routes->get('/Awal', 'Halaman::viewAwal');
+$routes->get('/Search', 'Halaman::viewSearch');
 $routes->get('/Login', 'Halaman::viewLogin');
 /*
  * --------------------------------------------------------------------
