@@ -34,7 +34,8 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->get('/list-kamar', 'Halaman::listKamar');
 $routes->get('/Search', 'Halaman::viewSearch');
-$routes->get('/Login', 'Halaman::viewLogin');
+$routes->get('/Sign-In', 'Halaman::viewSignIn');
+$routes->get('/Sign-Up', 'Halaman::viewSignUp');
 $routes->get('/Profil', 'Halaman::viewProfil');
 
 /*

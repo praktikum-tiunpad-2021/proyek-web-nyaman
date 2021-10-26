@@ -11,9 +11,13 @@ class Halaman extends BaseController
         $this->HotelModel = new HotelModel();
     }
     
-     public function viewLogin()
+     public function viewSignIn()
     {
-        return view('page/login');
+        return view('page/SignIn');
+    }
+    public function viewSignUp()
+    {
+        return view('page/SignUp');
     }
     public function viewSearch()
     {

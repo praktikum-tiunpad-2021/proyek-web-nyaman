@@ -141,14 +141,13 @@ p{
     color: #fff;
 }
 .kotak-login{
-    margin: 16% 3%;
+    margin: 20% 3%;
     width: 75%;
     background: #404040;
     border-radius: 16px;
     padding: 32px 24px;
     color: #fff;
 }
-
 .kotak-login a {
     color: #FFD31A;
     text-decoration: none;
@@ -160,12 +159,13 @@ p{
     border-radius: 16px;
     border: none;
     cursor: pointer;
+    font-weight: bolder;
+    font-size: 18px;
+    color: #404040;
 }
-
 .btn-login:hover{
     background-color: #ffe16b;
 }
-
 .btn-login:active {
     background-color: #ffe16b;
     /* box-shadow: 0 5px #fff; */
@@ -173,5 +173,24 @@ p{
 }
 
 .logo-login{
-    margin: 23% 25%;
+    margin: 30% 30%;
+}
+
+.kotak-signup{
+    margin: 12% 3%;
+    width: 75%;
+    background: #404040;
+    border-radius: 16px;
+    padding: 32px 24px;
+    color: #fff;
+}
+.kotak-signup a {
+    color: #FFD31A;
+    text-decoration: none;
+}
+
+.form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
 }
