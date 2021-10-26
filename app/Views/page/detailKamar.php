@@ -8,6 +8,11 @@
             <li aria-current="page"><?= $kamar['jenis_kamar']; ?></a></li>
         </ul>
     </nav>
+    <?php if(session()->get('role') == 'admin'){?>
+    <div class="d-flex justify-content-end mx-3">
+        <a href="#" class="btn btn-success">Edit Detail</a>
+    </div>
+    <?php } ?>
     <div class="row ">
         <div class="col-4">
             <img src="/assets/img/<?= $kamar['gambar'];?>" alt="gambar" class="img-thumbnail"> 
@@ -18,20 +23,22 @@
         <br>
         <p class="mx-0 text-justify"><?= $detail['deskripsi']; ?></p>
         <br>
-        <form action="#" method="post">
-            <table>
-                <tr>
-                    <td class="col-6"><label for="checkin">Check-in</label></td>
-                    <td><input type="date" name="checkin" id="checkin" class="form-control"></td>
-                </tr>
-                <tr>
-                    <td><label for="checkout">Check-out</label></td>
-                    <td><input type="date" name="checkout" id="checkout" class="form-control"></td>
-                </tr>
-            </table>
-            <br>
-            <input type="submit" value="Book" class="btn">
-        </form>
+        <?php if(session()->get('role') == 'tamu'){?>
+            <form action="#" method="post">
+                <table>
+                    <tr>
+                        <td class="col-6"><label for="checkin">Check-in</label></td>
+                        <td><input type="date" name="checkin" id="checkin" class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="checkout">Check-out</label></td>
+                        <td><input type="date" name="checkout" id="checkout" class="form-control"></td>
+                    </tr>
+                </table>
+                <br>
+                <input type="submit" value="Book" class="btn btn-1">
+            </form>
+        <?php } ?>
         </div>
     </div>
     <hr class="my-3">

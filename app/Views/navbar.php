@@ -8,7 +8,7 @@
             <a href="/Sign-In">Sign In</a></li>
             <a href="/list-kamar">List Kamar</a></li>
             <a href="/">Home</a></li>
-        <?php } else{ ?>
+        <?php } else { ?>
             <a href="<?= base_url('login/logout'); ?>">Logout</a></li>
             <a href="/Profil">Profil</a></li>
             <a href="/list-kamar">List Kamar</a></li>

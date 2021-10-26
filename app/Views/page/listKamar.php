@@ -4,6 +4,12 @@
 <div class="main">
     <h1 class="text-center pt-5">LIST KAMAR</h1>
     <hr>
+    <br>
+    <?php if(session()->get('role') == 'admin'){?>
+    <div class="d-flex justify-content-end mx-3">
+        <a href="#" class="btn btn-success">Tambah Kamar</a>
+    </div>
+    <?php } ?>
     <div class = "row m-4">
         <?php foreach($kamar as $k) : ?>
             <div class="col-4 mt-3">
@@ -16,7 +22,7 @@
                     <div class="clearfix"></div>
                     <div class="d-flex justify-content-center mt-2">
                         <a href="/list-kamar/<?= $k['id_kamar']; ?>">
-                            <button class="btn"> Book Now!</button>
+                            <button class="btn btn-1"> Book Now!</button>
                         </a>
                     </div>
                 </div>

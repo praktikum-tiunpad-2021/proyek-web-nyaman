@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 26, 2021 at 04:44 PM
+-- Generation Time: Oct 27, 2021 at 12:59 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.2
 
@@ -115,11 +115,21 @@ CREATE TABLE `reservasi` (
 CREATE TABLE `user` (
   `username` varchar(20) NOT NULL,
   `password` varchar(16) NOT NULL,
-  `nama_lengkap` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
+  `first_name` varchar(255) DEFAULT NULL,
+  `last_name` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
   `alamat` varchar(255) DEFAULT NULL,
-  `no_hp` varchar(13) DEFAULT NULL
+  `no_hp` varchar(13) DEFAULT NULL,
+  `role` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`username`, `password`, `first_name`, `last_name`, `email`, `alamat`, `no_hp`, `role`) VALUES
+('admin', 'admin', 'admin', 'admin', 'admin', 'admin', 'admin', 'admin'),
+('junedi', 'junedi', 'Junedi', 'Juned', 'junedi@gmail.com', 'Jl. Mawar NO.30', '085222221144', 'tamu');
 
 --
 -- Indexes for dumped tables
@@ -186,6 +196,12 @@ ALTER TABLE `reservasi`
 --
 
 --
+-- Constraints for table `detail_kamar`
+--
+ALTER TABLE `detail_kamar`
+  ADD CONSTRAINT `detail_kamar_ibfk_1` FOREIGN KEY (`id_kamar`) REFERENCES `jenis_kamar` (`id_kamar`);
+
+--
 -- Constraints for table `kamar`
 --
 ALTER TABLE `kamar`
@@ -193,10 +209,10 @@ ALTER TABLE `kamar`
   ADD CONSTRAINT `kamar_ibfk_3` FOREIGN KEY (`id_kamar`) REFERENCES `jenis_kamar` (`id_kamar`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `user`
+-- Constraints for table `reservasi`
 --
-ALTER TABLE `user`
-  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`username`) REFERENCES `reservasi` (`username`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `reservasi`
+  ADD CONSTRAINT `reservasi_ibfk_1` FOREIGN KEY (`username`) REFERENCES `user` (`username`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
