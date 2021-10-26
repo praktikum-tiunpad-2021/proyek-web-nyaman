@@ -1,0 +1,58 @@
+CRITICAL - 2021-10-25 02:30:04 --> Cannot declare class App\Models\kamarModel, because the name is already in use
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-10-25 02:30:18 --> Call to undefined method App\Models\HotelModel::findAll()
+#0 C:\xampp\htdocs\project-nyaman\vendor\codeigniter4\framework\system\CodeIgniter.php(802): App\Controllers\Halaman->listKamar()
+#1 C:\xampp\htdocs\project-nyaman\vendor\codeigniter4\framework\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Halaman))
+#2 C:\xampp\htdocs\project-nyaman\vendor\codeigniter4\framework\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\project-nyaman\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\project-nyaman\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2021-10-25 02:30:38 --> Undefined variable $HotelModel
+#0 C:\xampp\htdocs\project-nyaman\app\Controllers\Halaman.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 20)
+#1 C:\xampp\htdocs\project-nyaman\vendor\codeigniter4\framework\system\CodeIgniter.php(802): App\Controllers\Halaman->listKamar()
+#2 C:\xampp\htdocs\project-nyaman\vendor\codeigniter4\framework\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Halaman))
+#3 C:\xampp\htdocs\project-nyaman\vendor\codeigniter4\framework\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\project-nyaman\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\project-nyaman\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-10-25 02:30:48 --> Call to undefined method App\Models\HotelModel::findAll()
+#0 C:\xampp\htdocs\project-nyaman\vendor\codeigniter4\framework\system\CodeIgniter.php(802): App\Controllers\Halaman->listKamar()
+#1 C:\xampp\htdocs\project-nyaman\vendor\codeigniter4\framework\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Halaman))
+#2 C:\xampp\htdocs\project-nyaman\vendor\codeigniter4\framework\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\project-nyaman\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\project-nyaman\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2021-10-25 02:31:02 --> Call to undefined method App\Models\HotelModel::findAll()
+#0 C:\xampp\htdocs\project-nyaman\vendor\codeigniter4\framework\system\CodeIgniter.php(802): App\Controllers\Halaman->listKamar()
+#1 C:\xampp\htdocs\project-nyaman\vendor\codeigniter4\framework\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Halaman))
+#2 C:\xampp\htdocs\project-nyaman\vendor\codeigniter4\framework\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\project-nyaman\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\project-nyaman\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+ERROR - 2021-10-25 02:32:32 --> Error connecting to the database: Unknown database 'hotel-nyaman'
+CRITICAL - 2021-10-25 02:32:32 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'hotel-nyaman'
+#0 C:\xampp\htdocs\project-nyaman\vendor\codeigniter4\framework\system\Database\BaseConnection.php(570): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\project-nyaman\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1428): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp\htdocs\project-nyaman\vendor\codeigniter4\framework\system\Model.php(183): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\xampp\htdocs\project-nyaman\vendor\codeigniter4\framework\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#4 C:\xampp\htdocs\project-nyaman\app\Controllers\Halaman.php(20): CodeIgniter\BaseModel->findAll()
+#5 C:\xampp\htdocs\project-nyaman\vendor\codeigniter4\framework\system\CodeIgniter.php(802): App\Controllers\Halaman->listKamar()
+#6 C:\xampp\htdocs\project-nyaman\vendor\codeigniter4\framework\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Halaman))
+#7 C:\xampp\htdocs\project-nyaman\vendor\codeigniter4\framework\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\project-nyaman\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\project-nyaman\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2021-10-25 02:43:01 --> Undefined variable $gambar
+#0 C:\xampp\htdocs\project-nyaman\app\Views\page\listKamar.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 14)
+#1 C:\xampp\htdocs\project-nyaman\vendor\codeigniter4\framework\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\project-nyaman\vendor\codeigniter4\framework\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\project-nyaman\vendor\codeigniter4\framework\system\Common.php(1092): CodeIgniter\View\View->render('page/listKamar', Array, true)
+#4 C:\xampp\htdocs\project-nyaman\app\Controllers\Halaman.php(30): view('page/listKamar', Array)
+#5 C:\xampp\htdocs\project-nyaman\vendor\codeigniter4\framework\system\CodeIgniter.php(802): App\Controllers\Halaman->listKamar()
+#6 C:\xampp\htdocs\project-nyaman\vendor\codeigniter4\framework\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Halaman))
+#7 C:\xampp\htdocs\project-nyaman\vendor\codeigniter4\framework\system\CodeIgniter.php(317): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\project-nyaman\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\project-nyaman\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}

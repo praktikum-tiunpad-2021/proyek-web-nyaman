@@ -93,7 +93,8 @@ CREATE TABLE `reservasi` (
 CREATE TABLE `user` (
   `username` varchar(20) NOT NULL,
   `password` varchar(16) NOT NULL,
-  `nama_lengkap` varchar(255) NOT NULL,
+  `first_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `alamat` varchar(255) DEFAULT NULL,
   `no_hp` varchar(13) DEFAULT NULL
