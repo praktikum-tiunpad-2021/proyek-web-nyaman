@@ -3,9 +3,9 @@
     font-family: 'Comfortaa';
 }
 
-hr{
+/* hr{
     margin: 0 16px;
-}
+} */
 
 img {
     float: left;
@@ -255,3 +255,13 @@ p{
       --bs-table-accent-bg: var(--bs-table-striped-bg);
       color: var(--bs-table-striped-color);
   }
+
+/* bagian footer */
+.footer{
+    background-color: black;
+    height: max-content;
+    padding: 4px;
+    width: 100%;
+    color: #ffffff;
+    font-size: 8px;
+}

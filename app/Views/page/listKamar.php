@@ -2,12 +2,12 @@
 <?= $this->section('content'); ?>
 
 <div class="main">
-    <h1 class="text-center pt-4">LIST KAMAR</h1>
+    <h1 class="text-center pt-5">LIST KAMAR</h1>
     <hr>
     <div class = "row m-4">
         <?php foreach($kamar as $k) : ?>
             <div class="col-4 mt-3">
-                <div class="isi-list shadow">
+                <div class="isi-list shadow-lg">
                     <h3 class="text-center"><?= $k['jenis_kamar']; ?></h3>
                     <hr><br>
                     <div>
