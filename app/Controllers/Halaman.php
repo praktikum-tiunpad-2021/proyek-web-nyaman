@@ -29,4 +29,7 @@ class Halaman extends BaseController
         // dd($data);
         return view('page/listKamar', $data);
     }
+    public function viewProfil(){
+        return view('page/Profil');
+    }
 }

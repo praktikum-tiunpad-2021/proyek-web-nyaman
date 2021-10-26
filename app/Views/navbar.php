@@ -3,6 +3,7 @@
         <div class="logo">
             <img src="assets/img/logoterang.png" alt="nyaman" width=95px>
         </div>
+        <a href="/Profil">Profil</a></li>
         <a href="/Login">Login</a></li>
         <a href="/list-kamar">List Kamar</a></li>
         <a href="/">Home</a></li>
