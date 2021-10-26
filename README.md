@@ -8,7 +8,7 @@
   <h3 align="center">NYAMAN</h3>
 
   <p align="center">
-    Website untuk reservasi kamar hotel
+    Website untuk Reservasi Kamar Hotel Nyaman
   </p>
 </p>
 
@@ -36,12 +36,12 @@
 <!-- Fungsi -->
 ## Fungsi
 
-Website untuk membuat reservasi kamar hotel.
+Website ini berfungsi untuk melakukan reservasi kamar di Hotel Nyaman.
 
 <!-- Tujuan -->
 ## Tujuan
 
-Mempermudah pengguna dalam proses pemesanan kamar hotel.
+Mempermudah pengguna dalam proses pemesanan kamar hotel secara online melalui website.
 
 <!-- Target Pengguna -->
 ## Target Pengguna
@@ -56,4 +56,4 @@ https://www.figma.com/file/oiCZgjMfT5uTzMdBUxGie9/Nyaman?node-id=3%3A4
 <!-- Skema Database -->
 ## Skema Database
 
-<img src="public/assets/img/erd.png"  width="480" height="360">
+<img src="ERD.png"  width="480" height="360">

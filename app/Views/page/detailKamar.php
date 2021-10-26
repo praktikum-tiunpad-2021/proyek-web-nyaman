@@ -30,7 +30,7 @@
                 </tr>
             </table>
             <br>
-            <input type="submit" value="Book" class="">
+            <input type="submit" value="Book" class="btn">
         </form>
         </div>
     </div>
