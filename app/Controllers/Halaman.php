@@ -2,8 +2,15 @@
 
 namespace App\Controllers;
 
+use App\Models\HotelModel;
+
 class Halaman extends BaseController
 {
+    protected $HotelModel;
+    public function __construct(){
+        $this->HotelModel = new HotelModel();
+    }
+    
      public function viewLogin()
     {
         return view('page/login');
@@ -14,6 +21,12 @@ class Halaman extends BaseController
     }
     public function listKamar()
     {
-        return view('page/listKamar');
+        
+        $kamar = $this->HotelModel->findAll();
+        $data=[
+            'kamar' => $kamar
+        ];
+        // dd($data);
+        return view('page/listKamar', $data);
     }
 }
