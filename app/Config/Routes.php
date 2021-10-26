@@ -32,12 +32,12 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->get('/list-kamar', 'Halaman::listKamar');
 $routes->get('/Search', 'Halaman::viewSearch');
 $routes->get('/Sign-In', 'Halaman::viewSignIn');
 $routes->get('/Sign-Up', 'Halaman::viewSignUp');
 $routes->get('/Profil', 'Halaman::viewProfil');
-
+$routes->get('/list-kamar/(:segment)', 'listKamar::detailKamar/$1');
+$routes->get('/list-kamar', 'listKamar::listKamar');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

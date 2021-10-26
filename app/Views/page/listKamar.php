@@ -15,7 +15,7 @@
                     </div>
                     <div class="clearfix"></div>
                     <div class="d-flex justify-content-center mt-2">
-                        <a href="#">
+                        <a href="/list-kamar/<?= $k['id_kamar']; ?>">
                             <button class="btn"> Book Now!</button>
                         </a>
                     </div>
