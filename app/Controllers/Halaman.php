@@ -6,10 +6,10 @@ use App\Models\HotelModel;
 
 class Halaman extends BaseController
 {   
-     public function viewSignIn()
-    {
-        return view('page/SignIn');
-    }
+    //  public function viewSignIn()
+    // {
+    //     return view('page/SignIn');
+    // }
     public function viewSignUp()
     {
         return view('page/SignUp');

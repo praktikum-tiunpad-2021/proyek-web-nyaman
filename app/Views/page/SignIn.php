@@ -13,12 +13,19 @@
         </div>
         <div class="col">
             <div class="kotak-login">
-                <form method="post">
+            <?php if(!empty(session()->getFlashdata('gagal'))){ ?>
+            <div class="alert alert-warning">
+                <?php echo session()->getFlashdata('gagal'); ?>
+            </div>
+            <?php } ?>
+                <?php 
+                echo form_open('Login/cek_login');
+                ?>
                     <h1 class="text-center">Sign In</h1><br>
-                    <label for="email">Email Address</label>
-                    <input type="email" name="email" id="email" class="form-control" required><br>
+                    <label for="username">Username</label>
+                    <input type="text" name="username" class="form-control" required><br>
                     <label for="password">Password</label>
-                    <input type="password" name="password" id="password" class="form-control" required><br>
+                    <input type="password" name="password" class="form-control" required><br>
                     <input type="checkbox" onclick="myFunction()"> Show password
                     <label for=""></label><br><br>
                     <script>
@@ -36,10 +43,10 @@
                     <div class="d-flex justify-content-center mt-2">
                         <input type="submit" name="Submit" class="col-4 btn-login" value="Sign In!">
                     </div>
-                    
+                <?php echo form_close(); ?>    
                     <br>
                     <center><p style="font-size: 13px;">Don't have an account? <u><a href="/Sign-Up">Sign Up</a></u> here</p></center>
-                </form>
+                
             </div>
         </div>    
     </div>

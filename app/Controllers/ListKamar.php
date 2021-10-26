@@ -15,7 +15,6 @@ class ListKamar extends BaseController{
     public function listKamar()
     {
         $kamar = $this->ListKamarModel->findall();
-        //$kamar = $this->ListKamarModel->getListKamar()->findall();
         $data=[
             'kamar' => $kamar
         ];
@@ -24,7 +23,11 @@ class ListKamar extends BaseController{
     }
 
     public function DetailKamar($id_kamar)
-    {
+    {   
+        if(session()->get('username') == ''){
+            session()->setFlashdata('gagal', 'Silahkan Login terlebih dahulu!!');
+            return redirect()->to(base_url('/Sign-In'));
+        }
         $kamar = $this->ListKamarModel->find($id_kamar);
         $detail = $this->DetailKamarModel->find($id_kamar);
         $data=[

@@ -265,3 +265,22 @@ p{
     color: #ffffff;
     font-size: 8px;
 }
+
+/* buat alert */
+.alert {
+    position: relative;
+    padding: 1rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+}
+
+.alert-warning {
+    color: #664d03;
+    background-color: #fff3cd;
+    border-color: #ffecb5;
+}
+
+.alert-warning .alert-link {
+    color: #523e02;
+}
