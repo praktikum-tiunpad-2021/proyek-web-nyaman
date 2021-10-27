@@ -24,6 +24,8 @@
 
                     <label for="email">Email Address</label>
                     <input type="email" name="email" id="email" class="form-control" required><br>
+                    <label for="username">Username</label>
+                    <input type="text" name="username" class="form-control" required><br>
 
                     <div class="form">
                         <label for="password">Password
