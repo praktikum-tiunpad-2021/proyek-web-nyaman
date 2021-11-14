@@ -26,7 +26,11 @@ class Login extends BaseController{
             session()->set('no_hp', $cek['no_hp']);
             session()->set('role', $cek['role']);
             return redirect()->to(base_url('/'));
-        }else{
+        }if (isset($_POST['remember'])){
+           $time = time();
+           setcookie('login', $username, $time + 3600);
+        }
+        else{
             session()->setFlashdata('gagal', 'Username atau Password Salah!!');
             return redirect()->to(base_url('/Sign-In'));
         }

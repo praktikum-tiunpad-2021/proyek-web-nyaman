@@ -38,7 +38,7 @@
                             }
                         }
                     </script>
-                    
+                   <label for="remember"><input type="checkbox" name="remember" value="false"/> Remember Me</label><br><br>
                     <p style="font-size: 13px;">By signing in, you agree with our <u><a href="T&C" style="color: #fff;">Terms & Conditions</a></u> and <u><a href="PP" style="color: #fff;">Privacy Policy</a></u>.</p>
                     <div class="d-flex justify-content-center mt-2">
                         <input type="submit" name="Submit" class="col-4 btn-login" value="Sign In!">
