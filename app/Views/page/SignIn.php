@@ -25,7 +25,7 @@
                     <label for="username">Username</label>
                     <input type="text" name="username" class="form-control" required><br>
                     <label for="password">Password</label>
-                    <input type="password" name="password" class="form-control" required><br>
+                    <input type="password" name="password" id="password" class="form-control" required><br>
                     <input type="checkbox" onclick="myFunction()"> Show password
                     <label for=""></label><br><br>
                     <script>
@@ -41,10 +41,9 @@
                    <label for="remember"><input type="checkbox" name="remember" value="false"/> Remember Me</label><br><br>
                     <p style="font-size: 13px;">By signing in, you agree with our <u><a href="T&C" style="color: #fff;">Terms & Conditions</a></u> and <u><a href="PP" style="color: #fff;">Privacy Policy</a></u>.</p>
                     <div class="d-flex justify-content-center mt-2">
-                        <input type="submit" name="Submit" class="col-4 btn-login" value="Sign In!">
+                    <input type="submit" name="submit" id="submit" class="col-4 btn-login alert" value="Sign In!">
                     </div>
-                <?php echo form_close(); ?>    
-                    <br>
+                <?php echo form_close(); ?>
                     <center><p style="font-size: 13px;">Don't have an account? <u><a href="/Sign-Up">Sign Up</a></u> here</p></center>
                 
             </div>
