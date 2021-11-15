@@ -15,7 +15,7 @@ class Login extends BaseController{
     public function cek_login(){
         $username = $this->request->getPost('username');
         $password = $this->request->getPost('password');
-
+        $remember=$this->request->getPost('remember');
         $cek = $this->LoginModel->cek_login($username, $password);
 
         if (($cek['username']==$username) && ($cek['password']==$password)){
@@ -25,10 +25,11 @@ class Login extends BaseController{
             session()->set('email', $cek['email']);
             session()->set('no_hp', $cek['no_hp']);
             session()->set('role', $cek['role']);
+            session()->markAsTempdata('login', 120);
             return redirect()->to(base_url('/'));
-        }if (isset($_POST['remember'])){
+        }if ($remember){
            $time = time();
-           setcookie('login', $username, $time + 3600);
+           set_cookie('login', $username, $time + 3600);
         }
         else{
             session()->setFlashdata('gagal', 'Username atau Password Salah!!');
