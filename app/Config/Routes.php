@@ -36,9 +36,11 @@ $routes->get('/Search', 'Halaman::viewSearch');
 $routes->get('/Sign-In', 'Login::viewSignIn');
 $routes->get('/Sign-Up', 'Halaman::viewSignUp');
 $routes->get('/Profil', 'Login::viewProfil');
-$routes->get('/list-kamar/(:segment)', 'listKamar::detailKamar/$1');
-$routes->get('/list-kamar', 'listKamar::index');
-$routes->get('/tambah-kamar', 'listKamar::create');
+$routes->get('/list-kamar', 'ListKamar::index');
+$routes->get('/list-kamar/edit/(:segment)', 'ListKamar::edit/$1');
+$routes->delete('/list-kamar/(:num)', 'ListKamar::delete/$1');
+$routes->get('/list-kamar/(:any)', 'ListKamar::detailKamar/$1');
+$routes->get('/tambah-kamar', 'ListKamar::create');
 $routes->get('/editProfil', 'Login::editProfil');
 /*
  * --------------------------------------------------------------------

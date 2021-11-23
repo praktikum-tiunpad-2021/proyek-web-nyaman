@@ -10,6 +10,11 @@
         <a href="/tambah-kamar" class="btn btn-success">Tambah Kamar</a>
     </div>
     <?php } ?>
+    <?php if(!empty(session()->getFlashdata('pesan'))){ ?>
+            <div class="alert alert-success m-3">
+                <?php echo session()->getFlashdata('pesan'); ?>
+            </div>
+        <?php } ?>
     <div class = "row m-4">
         <?php foreach($kamar as $k) : ?>
             <div class="col-4 mt-3">

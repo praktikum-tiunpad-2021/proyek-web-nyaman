@@ -5,12 +5,17 @@
     <nav class="pt-4">
         <ul class="breadcrumb">
             <li><a href="/list-kamar">List Kamar</a></li>
-            <li aria-current="page"><?= $kamar['jenis_kamar']; ?></a></li>
+            <li aria-current="page"><?= $kamar['jenis_kamar']; ?></li>
         </ul>
     </nav>
     <?php if(session()->get('role') == 'admin'){?>
     <div class="d-flex justify-content-end mx-3">
-        <a href="#" class="btn btn-success">Edit Detail</a>
+        <a href="/list-kamar/edit/<?= $kamar['id_kamar']; ?>" class="btn btn-success mx-2">Edit Detail</a>
+        <form action="/list-kamar/<?= $kamar['id_kamar']; ?>" method="post">
+            <?= csrf_field(); ?>
+            <input type="hidden" name="_method" value="DELETE">
+            <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah anda yakin?');">Delete Kamar</button>
+        </form>
     </div>
     <?php } ?>
     <div class="row ">

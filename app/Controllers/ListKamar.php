@@ -18,7 +18,7 @@ class ListKamar extends BaseController{
             'kamar' => $this->ListKamarModel->getListKamar()
         ];
         // dd($data);
-        return view('page/listKamar', $data);
+        return view('kamar/index', $data);
     }
 
     public function DetailKamar($id_kamar)
@@ -35,10 +35,10 @@ class ListKamar extends BaseController{
         if(empty($data['detail'])){
             throw new \CodeIgniter\Exceptions\PageNotFoundException('kamar tidak ditemukan');
         }
-        return view('page/detailKamar', $data);
+        return view('kamar/detailKamar', $data);
     }
     public function create(){
-        return view('page/createKamar');
+        return view('kamar/createKamar');
     }
 
     public function save(){
@@ -64,7 +64,51 @@ class ListKamar extends BaseController{
             'air' => $this->request->getVar('air'),
             'sarapan' => $this->request->getVar('sarapan')
         ]);
+        session()->setFlashdata('pesan', 'Data Kamar berhasil ditambahkan');
+        return redirect()->to(base_url('/list-kamar'));
+    }
 
-        return redirect()->to('/list-kamar');
+    public function delete($id_kamar){
+        $id_detail = $this->DetailKamarModel->where(['id_kamar' => $id_kamar])->first();
+        $this->DetailKamarModel->delete($id_detail);
+        $this->ListKamarModel->delete($id_kamar);
+        session()->setFlashdata('pesan', 'Data Kamar berhasil dihapus');
+        return redirect()->to(base_url('/list-kamar'));
+    }
+    public function edit($id_kamar){
+        $data = [
+            'kamar' =>  $this->ListKamarModel->getListKamar($id_kamar),
+            'detail' => $this->DetailKamarModel->getDetail($id_kamar)
+        ];
+        
+        return view('kamar/editDetail', $data);
+    }
+
+    public function update($id_kamar){
+        //dd($this->request->getVar());
+        $this->ListKamarModel->save([
+            'id_kamar' => $id_kamar,
+            'jenis_kamar' => $this->request->getVar('jenis_kamar'),
+            'harga' => $this->request->getVar('harga')
+        ]);
+        $detailKamar = $this->DetailKamarModel->where(['id_kamar' => $id_kamar])->first();
+        $id_detail = $detailKamar['id_detail'];
+        $this->DetailKamarModel->save([
+            'id_detail' => $id_detail,
+            'deskripsi' => $this->request->getVar('deskripsi'),
+            'luas_kamar' => $this->request->getVar('luas_kamar'),
+            'ranjang' => $this->request->getVar('ranjang'),
+            'ac' => $this->request->getVar('ac'),
+            'tv' => $this->request->getVar('tv'),
+            'wifi' => $this->request->getVar('wifi'),
+            'tmp_penyimpanan' => $this->request->getVar('tmp_penyimpanan'),
+            'mini_bar' => $this->request->getVar('mini_bar'),
+            'kamar_mandi' => $this->request->getVar('kamar_mandi'),
+            'hair_dryer' => $this->request->getVar('hair_dryer'),
+            'air' => $this->request->getVar('air'),
+            'sarapan' => $this->request->getVar('sarapan')
+        ]);
+        session()->setFlashdata('pesan', 'Data Kamar berhasil diubah');
+        return redirect()->to(base_url('/list-kamar'));
     }
 }
