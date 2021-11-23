@@ -7,7 +7,7 @@
     <br>
     <?php if(session()->get('role') == 'admin'){?>
     <div class="d-flex justify-content-end mx-3">
-        <a href="#" class="btn btn-success">Tambah Kamar</a>
+        <a href="/tambah-kamar" class="btn btn-success">Tambah Kamar</a>
     </div>
     <?php } ?>
     <div class = "row m-4">

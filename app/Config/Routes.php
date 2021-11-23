@@ -38,6 +38,7 @@ $routes->get('/Sign-Up', 'Halaman::viewSignUp');
 $routes->get('/Profil', 'Halaman::viewProfil');
 $routes->get('/list-kamar/(:segment)', 'listKamar::detailKamar/$1');
 $routes->get('/list-kamar', 'listKamar::listKamar');
+$routes->get('/tambah-kamar', 'listKamar::tambahKamar');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

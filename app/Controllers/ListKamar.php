@@ -37,4 +37,7 @@ class ListKamar extends BaseController{
         //dd($data);
         return view('page/detailKamar', $data);
     }
+    public function tambahKamar(){
+        return view('page/tambahKamar');
+    }
 }
