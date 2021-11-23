@@ -118,8 +118,8 @@
                   </div>
                 </div>
                 <hr class="my-4">
-                <div class="col-4 text-center">
-                  <a href="/editProfil" class="btn btn-sm btn-primary">Edit</a>
+                <div class="col text-center">
+                  <a href="/editProfil" class="btn btn-sm btn-primary text-center">Edit</a>
                 </div>
                   </div>
                 </div>

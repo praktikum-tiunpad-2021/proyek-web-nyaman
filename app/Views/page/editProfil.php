@@ -118,7 +118,7 @@
                   </div>
                 </div>
                 <hr class="my-4">
-                <div class="col-4 text-center">
+                <div class="col text-center">
                   <a href="#!" class="btn btn-sm btn-primary">Simpan</a>
                 </div>
                   </div>
