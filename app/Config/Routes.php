@@ -35,10 +35,11 @@ $routes->get('/', 'Home::index');
 $routes->get('/Search', 'Halaman::viewSearch');
 $routes->get('/Sign-In', 'Login::viewSignIn');
 $routes->get('/Sign-Up', 'Halaman::viewSignUp');
-$routes->get('/Profil', 'Halaman::viewProfil');
+$routes->get('/Profil', 'Login::viewProfil');
 $routes->get('/list-kamar/(:segment)', 'listKamar::detailKamar/$1');
 $routes->get('/list-kamar', 'listKamar::listKamar');
 $routes->get('/tambah-kamar', 'listKamar::tambahKamar');
+$routes->get('/editProfil', 'Login::editProfil');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

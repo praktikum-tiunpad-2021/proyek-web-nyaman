@@ -18,7 +18,5 @@ class Halaman extends BaseController
     {
         return view('page/search');
     }
-    public function viewProfil(){
-        return view('page/Profil');
-    }
+    
 }

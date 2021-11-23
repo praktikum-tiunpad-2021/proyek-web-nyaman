@@ -70,13 +70,13 @@
                     <div class="col-lg-6">
                       <div class="form-group focused">
                         <label class="form-control-label" for="input-username">Username</label>
-                        <input type="text" id="input-username" class="form-control form-control-alternative" value=" <?php echo (session()->get('username'))?>"disabled>
+                        <input type="text" id="input-username" class="form-control form-control-alternative" value=" <?php echo (session()->get('username'))?>">
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label" for="input-email">Email address</label>
-                        <input type="email" id="input-email" class="form-control form-control-alternative" value=" <?php echo (session()->get('email'))?>"disabled>
+                        <input type="email" id="input-email" class="form-control form-control-alternative" value=" <?php echo (session()->get('email'))?>">
                       </div>
                     </div>
                   </div>
@@ -84,13 +84,13 @@
                     <div class="col-lg-6">
                       <div class="form-group focused">
                         <label class="form-control-label" for="input-first-name">First name</label>
-                        <input type="text" id="input-first-name" class="form-control form-control-alternative" value=" <?php echo (session()->get('first_name'))?>"disabled>
+                        <input type="text" id="input-first-name" class="form-control form-control-alternative" value=" <?php echo (session()->get('first_name'))?>">
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <div class="form-group focused">
                         <label class="form-control-label" for="input-last-name">Last name</label>
-                        <input type="text" id="input-last-name" class="form-control form-control-alternative" value=" <?php echo (session()->get('last_name'))?>"disabled>
+                        <input type="text" id="input-last-name" class="form-control form-control-alternative" value=" <?php echo (session()->get('last_name'))?>">
                       </div>
                     </div>
                   </div>
@@ -103,7 +103,7 @@
                     <div class="col-md-12">
                       <div class="form-group focused">
                         <label class="form-control-label" for="input-address">Alamat</label>
-                        <input id="input-address" class="form-control form-control-alternative" value=" <?php echo (session()->get('alamat'))?>"disabled>
+                        <input id="input-address" class="form-control form-control-alternative" value=" <?php echo (session()->get('alamat'))?>">
                       </div>
                     </div>
                   </div>
@@ -111,7 +111,7 @@
                     <div class="col-lg-4">
                       <div class="form-group focused">
                         <label class="form-control-label" for="input-city">No_HP</label>
-                        <input type="text" id="input-city" class="form-control form-control-alternative" value=" <?php echo (session()->get('no_hp'))?>"disabled>
+                        <input type="text" id="input-city" class="form-control form-control-alternative" value=" <?php echo (session()->get('no_hp'))?>">
                       </div>
                    </d iv>
                  
@@ -119,7 +119,7 @@
                 </div>
                 <hr class="my-4">
                 <div class="col-4 text-center">
-                  <a href="/editProfil" class="btn btn-sm btn-primary">Edit</a>
+                  <a href="#!" class="btn btn-sm btn-primary">Simpan</a>
                 </div>
                   </div>
                 </div>
