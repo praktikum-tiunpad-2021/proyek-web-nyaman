@@ -21,7 +21,7 @@
                 <?php 
                 echo form_open('Login/cek_login');
                 ?>
-                    <h1 class="text-center">Sign In</h1><br>
+                    <h1 class="text-center">Login</h1><br>
                     <label for="username">Username</label>
                     <input type="text" name="username" class="form-control" required><br>
                     <label for="password">Password</label>

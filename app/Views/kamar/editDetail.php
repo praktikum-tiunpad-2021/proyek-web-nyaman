@@ -129,7 +129,7 @@
                     </td>
                 </tr>
             </table>
-            <button type="submit" class="btn btn-primary mb-3">Update Kamar</button>
+            <button type="submit" class="btn btn-success">Update Kamar</button><br><br>
         </div>
     </div>
     </form>
