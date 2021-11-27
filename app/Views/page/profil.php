@@ -118,9 +118,7 @@
                   </div>
                 </div>
                 <hr class="my-4">
-                <div class="col text-center">
-                  <a href="/editProfil" class="btn btn-sm btn-primary text-center">Edit</a>
-                </div>
+                  <a href="/editProfil" class="btn btn-success">Edit Profil</a>
                   </div>
                 </div>
               </form>

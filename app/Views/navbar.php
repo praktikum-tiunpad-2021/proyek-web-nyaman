@@ -5,7 +5,7 @@
         </div>
         <?php  
         if(session()->get('username') == ''){?>
-            <a href="/Sign-In">Sign In</a></li>
+            <a href="/Sign-In">Login</a></li>
             <a href="/list-kamar">List Kamar</a></li>
             <a href="/">Home</a></li>
         <?php } else { ?>

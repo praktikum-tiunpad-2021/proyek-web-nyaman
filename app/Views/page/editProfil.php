@@ -118,9 +118,7 @@
                   </div>
                 </div>
                 <hr class="my-4">
-                <div class="col text-center">
-                  <a href="#!" class="btn btn-sm btn-primary">Simpan</a>
-                </div>
+                  <a href="#!" class="btn btn-success">Simpan</a>
                   </div>
                 </div>
               </form>
