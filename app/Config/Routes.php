@@ -42,6 +42,7 @@ $routes->delete('/list-kamar/(:num)', 'ListKamar::delete/$1');
 $routes->get('/list-kamar/(:any)', 'ListKamar::detailKamar/$1');
 $routes->get('/tambah-kamar', 'ListKamar::create');
 $routes->get('/editProfil', 'Login::editProfil');
+$routes->get('/bookKamar/(:any)', 'ListKamar::book/$1');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

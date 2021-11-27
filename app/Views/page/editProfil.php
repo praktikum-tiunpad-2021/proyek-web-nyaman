@@ -70,13 +70,13 @@
                     <div class="col-lg-6">
                       <div class="form-group focused">
                         <label class="form-control-label" for="input-username">Username</label>
-                        <input type="text" id="input-username" class="form-control form-control-alternative" value=" <?php echo (session()->get('username'))?>">
+                        <input type="text" id="input-username" class="form-control form-control-alternative" value=" <?php echo (session()->get('username'))?>"disabled>
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label" for="input-email">Email address</label>
-                        <input type="email" id="input-email" class="form-control form-control-alternative" value=" <?php echo (session()->get('email'))?>">
+                        <input type="email" id="input-email" class="form-control form-control-alternative" value=" <?php echo (session()->get('email'))?>"disabled>
                       </div>
                     </div>
                   </div>

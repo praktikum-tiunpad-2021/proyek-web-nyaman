@@ -109,6 +109,17 @@ class ListKamar extends BaseController{
             'sarapan' => $this->request->getVar('sarapan')
         ]);
         session()->setFlashdata('pesan', 'Data Kamar berhasil diubah');
-        return redirect()->to(base_url('/list-kamar'));
+         $data=[
+            'kamar' =>  $this->ListKamarModel->getListKamar($id_kamar),
+            'detail' => $this->DetailKamarModel->getDetail($id_kamar)
+        ];
+        return view('kamar/detailKamar', $data);
+    }
+    public function book($id_kamar){
+        $data=[
+            'kamar' =>  $this->ListKamarModel->getListKamar($id_kamar),
+            'detail' => $this->DetailKamarModel->getDetail($id_kamar)
+        ];
+        return view('kamar/bookKamar', $data);
     }
 }
