@@ -38,6 +38,6 @@ addLoadEvent(noPemesanan);
 <p>Checkin :</p>
 <p>CheckOut:</p>
 <p>Status : Menunggu</p>
-<a href="/buktiBayar/"nopesan class="btn btn-success mx-2">Konfirmasi</a>
+<a href="/buktiBayar/<?= $kamar['id_kamar']; ?>" class="btn btn-success mx-2">Konfirmasi</a>
 <?= $this->endSection('content'); ?>
 </body>

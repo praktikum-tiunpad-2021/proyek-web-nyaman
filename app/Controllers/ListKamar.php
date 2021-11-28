@@ -121,5 +121,12 @@ class ListKamar extends BaseController{
             'detail' => $this->DetailKamarModel->getDetail($id_kamar)
         ];
         return view('kamar/bookKamar', $data);
+    }   
+     public function bukti($id_kamar){
+        $data=[
+            'kamar' =>  $this->ListKamarModel->getListKamar($id_kamar),
+            'detail' => $this->DetailKamarModel->getDetail($id_kamar)
+        ];
+        return view('kamar/buktiBayar', $data);
     }
 }
