@@ -935,7 +935,7 @@
   }
   
   .navbar {
-    position: relative;
+    position: fixed;
     display: flex;
     padding: 1rem 1rem;
     flex-wrap: wrap;
@@ -945,7 +945,7 @@
   
   .navbar>.container,
   .navbar>.container-fluid {
-    display: flex;
+    display: fixed;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
@@ -965,7 +965,7 @@
   }
   
   .navbar-nav .dropdown-menu {
-    position: static;
+    position: fixed;
     float: none;
   }
   

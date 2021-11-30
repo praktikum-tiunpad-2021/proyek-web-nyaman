@@ -47,35 +47,36 @@ $checkout = date('Y/m/d',strtotime($_POST['checkout']));
 	<h2 class="text-center pt-5" style="font-weight: bold;">Konfirmasi Pemesanan Kamar Hotel</h2>
     <hr>
 		<div class="container mt-3 col-4">
+		<form action="/ListKamar/bukti/<?= $kamar['id_kamar']; ?>" method="post">  
 			<table class="table table-striped">
 				<tbody>
 					<tr>
 						<td style="font-weight: bold;">No. Pemesanan</td>
-						<td><input type="text" id="nopesan" style="border: none;" disabled></td>
+						<td><input type="text" name="nopesan" id="nopesan" style="border: none;"  class="form-control" disabled></td>
       				</tr>
 					<tr>
 						<td style="font-weight: bold;">Waktu Pemesanan</td>
-						<td><input type="text" id="currentTime" style="border: none;" disabled></td>
+						<td><input type="text" name="currentTime" id="currentTime" style="border: none;"  class="form-control" disabled></td>
 					</tr>
 					<tr>
 						<td style="font-weight: bold;">Nama Pemesan</td>
-						<td><?php echo (session()->get('first_name'))."  ".(session()->get('last_name'))?></td>
+						<td><input type="text" name="nama" id="nama" style="border: none;" class="form-control" value="<?php echo (session()->get('first_name'))."  ".(session()->get('last_name'))?>"disabled></td>
 					</tr>
 					<tr>
 						<td style="font-weight: bold;">Jenis Kamar</td>
-						<td><?php echo $kamar['jenis_kamar']; ?></td>
+						<td><input type="text" name="jenis kamar" id="jenis kamar" style="border: none;" class="form-control" value="<?php echo $kamar['jenis_kamar']; ?>" disabled></td>
 					</tr>
 					<tr>
 						<td style="font-weight: bold;">Check In</td>
-						<td><input type="text" name="checkin" id="checkin" style="border: none;" value ="<?php  echo $checkin ?>"disabled></td>
+						<td><input type="text" name="checkin" id="checkin" style="border: none;"  class="form-control" value ="<?php  echo $checkin ?>"disabled></td>
 					</tr>
 					<tr>
 						<td style="font-weight: bold;">Check Out</td>
-						<td><input type="text" name="checkout" id="checkout" style="border: none;"value ="<?php  echo $checkout ?>" disabled></td>
+						<td><input type="text" name="checkout" id="checkout" style="border: none;" class="form-control" value ="<?php  echo $checkout ?>" disabled></td>
 					</tr>
 					<tr>
 						<td style="font-weight: bold;">Biaya</td>
-						<td><input type="text" name="biaya" id="biaya" style="border: none" value="<?php echo $days*$kamar['harga']?>" disabled></td>
+						<td><input type="text" name="biaya" id="biaya" style="border: none"  class="form-control" value="<?php echo $days*$kamar['harga']?>" disabled></td>
 					</tr>
 					<tr>
 						<td style="font-weight: bold;">Status Pemesanan</td>
@@ -83,10 +84,9 @@ $checkout = date('Y/m/d',strtotime($_POST['checkout']));
 					</tr>
 				</tbody>
 			</table>
-			<center><a href="/buktiBayar/<?= $kamar['id_kamar']; ?>" class="btn btn-success mx-2">Konfirmasi</a></center><br><br>
-		</div>
-
-
+			<center><input type="submit" value="Konfirmasi" class="btn btn-success mx-2"></a></center><br><br>
+		</form>
+</div>
 
 <?= $this->endSection('content'); ?>
 </body>
