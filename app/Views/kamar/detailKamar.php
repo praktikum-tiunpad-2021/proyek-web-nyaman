@@ -96,7 +96,7 @@
                     <td><?= $detail['sarapan']; ?> </td>
                 </tr>
             </table>
-            <a href="/bookKamar/<?= $kamar['id_kamar']; ?>" class="btn btn-success mx-2">Book Kamar</a>
+            <a href="/bookKamar/<?= $kamar['id_kamar']; ?>" class="btn btn-success mx-2">Book Kamar</a><br><br>
         </div>
     </div>
 </div>

@@ -58,12 +58,12 @@ ul.breadcrumb {
 /*ini bagian nav*/
 
 .topnav{
-    overflow: hidden;
+    overflow:visible;
     position: fixed;
     background-color: black;
     height: max-content;
     padding: 8px;
-    top: 0;
+    top: 0px;
     width: 100%;
 }
 
@@ -309,6 +309,9 @@ p{
     width: 100%;
     color: #ffffff;
     font-size: 8px;
+
+    /* position: relative;
+    bottom: 0px; */
 }
 
 /* buat alert */
