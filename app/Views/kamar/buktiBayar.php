@@ -1,60 +1,134 @@
 <?= $this->extend('/base'); ?>
 <?= $this->section('content'); ?>
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
-
+<script>
+    function getWaktu(){
+        var today = new Date();
+        var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        document.getElementById("currentTime").value = date +" " + time;
+    }
+    function noPemesanan(){
+        document.getElementById("nopesan").value = Math.floor(Math.random() * 100);
+    }
+    function addLoadEvent(func) { 
+        var oldonload = window.onload; 
+        if (typeof window.onload != 'function') { 
+            window.onload = func; 
+        } else { 
+            window.onload = function() { 
+                if (oldonload) { 
+                    oldonload(); 
+                } 
+                func(); 
+            } 
+        } 
+    } 
+    addLoadEvent(getWaktu); 
+    addLoadEvent(noPemesanan);
+</script>
+<style>
+    td {
+        padding-bottom: 5px;
+        font-size: 15px;
+    }
+</style>
 <body>
-	<?php
-$nopesan =  $_POST['nopesan'];
-$time = $_POST['currentTime'];
-$nama=$_POST['nama'];
-$jeniskamar=$_POST['jenis kamar'];
-$checkin = $_POST['checkin'];
-$checkout = $_POST['checkout'];
-$biaya=$_POST['biaya'];
-	?>   
-	<div class="main mx-4">
-	<h2 class="text-center pt-5" style="font-weight: bold;">Konfirmasi Pemesanan Kamar Hotel</h2>
+
+    <div class="main mx-4">
+    <nav class="pt-4">
+    <div class="row ">
+        <div class="col-1">
+            <img src="/assets/img/logo.png" alt="NYAMAN" class="img-invoice"> 
+        </div>
+        <div class="col-8">
+            <br>
+            <h6>HOTEL NYAMAN</h6>
+            <p class="mx-0 text-justify" style="font-size:12px;">Jl. Raya Bandung Sumedang KM.21, Hegarmanah, Jatinangor, Kabupaten Sumedang, Jawa Barat 45363</p>
+            <p class="mx-0 text-justify" style="font-size:12px;">Telepon: 022 84288828 | Email: hotel@nyaman.co.id</p>
+            <br>
+        </div>
+    </div>
     <hr>
-		<div class="container mt-3 col-4">
-			<table class="table table-striped">
-				<tbody>
-					<tr>
-						<td style="font-weight: bold;">No. Pemesanan</td>
-						<td><input type="text" id="nopesan" style="border: none;"value="<?php echo $nopesan ?>" disabled></td>
-      				</tr>
-					<tr>
-						<td style="font-weight: bold;">Waktu Pemesanan</td>
-						<td><input type="text" id="currentTime" style="border: none;"value="<?php echo $nama ?>" disabled></td>
-					</tr>
-					<tr>
-						<td style="font-weight: bold;">Nama Pemesan</td>
-						<td><input type="text" id="nama" style="border: none;" value="<?php echo $nama ?>"disabled></td>
-					</tr>
-					<tr>
-						<td style="font-weight: bold;">Jenis Kamar</td>
-						<td><input type="text" id="jenis kamar" style="border: none;"value="<?php echo $jeniskamar ?>" disabled></td>
-					</tr>
-					<tr>
-						<td style="font-weight: bold;">Check In</td>
-						<td><input type="text" name="checkin" id="checkin" style="border: none;" value ="<?php  echo $checkin ?>"disabled></td>
-					</tr>
-					<tr>
-						<td style="font-weight: bold;">Check Out</td>
-						<td><input type="text" name="checkout" id="checkout" style="border: none;"value ="<?php  echo $checkout ?>" disabled></td>
-					</tr>
-					<tr>
+    <br>
+    <h1 class="text-center" style="font-weight: bold;">Bukti Pemesanan Kamar</h1>
+    <div class="container mt-3">
+        <table>
+            <tbody>
+                <tr>
+                    <td style="font-weight: bold;">Nomor Pemesanan</td>
+                    <td>:</td>
+                    <td><input type="text" id="nopesan" style="border: none;" disabled></td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bold;">Pemesanan dilakukan pada</td>
+                    <td>:</td>
+                    <td><input type="text" id="currentTime" style="border: none;" disabled></td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bold;">Nama Tamu</td>
+                    <td>:</td>
+                    <td><?php echo (session()->get('first_name'))."  ".(session()->get('last_name'))?></td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bold;">Status</td>
+                    <td>:</td>
+                    <td style="color: green; font-weight: bold;">Terkonfirmasi</td>
+                </tr>
+            </tbody>
+        </table><br>
+        <fieldset>
+            <table>
+                <thead>
+                    <td>
+                        <u><h3>Detail Pesanan</h3></u>
+                    </td>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="font-weight: bold;">Jenis Kamar</td>
+                        <td>:</td>
+                        <td><?php echo $kamar['jenis_kamar']; ?></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: bold;">Check In</td>
+                        <td>:</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: bold;">Check Out</td>
+                        <td>:</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </fieldset><br>
+        <fieldset>
+            <table>
+                <thead>
+                    <td>
+                        <u><h3>Detail Pembayaran</h3></u>
+                    </td>
+                </thead>
+                <tbody>
+                    <tr>
 						<td style="font-weight: bold;">Biaya</td>
-						<td><input type="text" name="biaya" id="biaya" style="border: none" value="<?php echo $biaya?>" disabled></td>
+                        <td>:</td>
+						<td></td>
 					</tr>
-					<tr>
-						<td style="font-weight: bold;">Status Pemesanan</td>
-						<td> Terkonfirmasi</td>
+                    <tr>
+						<td style="font-weight: bold;">Metode Pembayaran</td>
+                        <td>:</td>
+						<td></td>
 					</tr>
-				</tbody>
-			</table>
-</form>
-		</div>
-<?= $this->endSection('content'); ?>
+                </tbody>
+            </table>
+        </fieldset><br>
+        <p class="mx-0 text-justify" style="font-size:15px;"><b>Note:</b> Mohon menunjukkan Voucher Hotel ini kepada resepsionis atau reservasi saat check-in.</p>
+        <br><br>
+    </div>
+    </div>
 </body>
+
+
+<?= $this->endSection('content'); ?>

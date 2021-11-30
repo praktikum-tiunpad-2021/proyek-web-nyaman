@@ -44,23 +44,23 @@ $checkout = date('Y/m/d',strtotime($_POST['checkout']));
  $days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
 	?>   
 	<div class="main mx-4">
-	<h2 class="text-center pt-5" style="font-weight: bold;">Konfirmasi Pemesanan Kamar Hotel</h2>
+	<h2 class="text-center pt-5" style="font-weight: bold;">Konfirmasi Pemesanan Kamar</h2>
     <hr>
 		<div class="container mt-3 col-4">
 		<form action="/ListKamar/bukti/<?= $kamar['id_kamar']; ?>" method="post">  
 			<table class="table table-striped">
 				<tbody>
 					<tr>
-						<td style="font-weight: bold;">No. Pemesanan</td>
-						<td><input type="text" name="nopesan" id="nopesan" style="border: none;"  class="form-control" disabled></td>
+						<td style="font-weight: bold;">Nomor Pemesanan</td>
+						<td><input type="text" id="nopesan" style="border: none;" disabled></td>
       				</tr>
 					<tr>
-						<td style="font-weight: bold;">Waktu Pemesanan</td>
-						<td><input type="text" name="currentTime" id="currentTime" style="border: none;"  class="form-control" disabled></td>
+						<td style="font-weight: bold;">Pemesanan dilakukan pada</td>
+						<td><input type="text" id="currentTime" style="border: none;" disabled></td>
 					</tr>
 					<tr>
-						<td style="font-weight: bold;">Nama Pemesan</td>
-						<td><input type="text" name="nama" id="nama" style="border: none;" class="form-control" value="<?php echo (session()->get('first_name'))."  ".(session()->get('last_name'))?>"disabled></td>
+						<td style="font-weight: bold;">Nama Tamu</td>
+						<td><?php echo (session()->get('first_name'))."  ".(session()->get('last_name'))?></td>
 					</tr>
 					<tr>
 						<td style="font-weight: bold;">Jenis Kamar</td>
@@ -79,14 +79,15 @@ $checkout = date('Y/m/d',strtotime($_POST['checkout']));
 						<td><input type="text" name="biaya" id="biaya" style="border: none"  class="form-control" value="<?php echo $days*$kamar['harga']?>" disabled></td>
 					</tr>
 					<tr>
-						<td style="font-weight: bold;">Status Pemesanan</td>
-						<td>Menunggu Konfirmasi</td>
+						<td style="font-weight: bold;">Status</td>
+						<td style="color: red; font-weight: bold;">Menunggu Konfirmasi</td>
 					</tr>
 				</tbody>
 			</table>
-			<center><input type="submit" value="Konfirmasi" class="btn btn-success mx-2"></a></center><br><br>
-		</form>
-</div>
+			<center><a href="/buktiBayar/<?= $kamar['id_kamar']; ?>" class="btn btn-success mx-2">Konfirmasi</a></center><br>
+		</div>
+
+<br><br><br><br>
 
 <?= $this->endSection('content'); ?>
 </body>

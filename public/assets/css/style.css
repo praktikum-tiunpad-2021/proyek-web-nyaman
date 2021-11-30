@@ -351,3 +351,17 @@ p{
 .alert-danger .alert-link {
     color: #6a1a21;
 }
+
+/* bukti bayar */
+.img-invoice {
+    float: right;
+    max-width: 50%;
+    height: auto;
+    padding-top: 11%;
+}
+fieldset {
+    border: 2px solid #FFD700;
+    padding-top: 10px;
+    background: #FFF8DC;
+    box-shadow: inset 0px 0px 15px #FFE4C4;
+}
