@@ -58,12 +58,12 @@
                 <tr>
                     <td style="font-weight: bold;">Nomor Pemesanan</td>
                     <td>:</td>
-                    <td><input type="text" id="nopesan" style="border: none;" disabled></td>
+                    <td><input type="text" name="nopesan" style="border: none;" value ="<?= $reservasi['no_pesanan']; ?>" readonly></td>
                 </tr>
                 <tr>
                     <td style="font-weight: bold;">Pemesanan dilakukan pada</td>
                     <td>:</td>
-                    <td><input type="text" id="currentTime" style="border: none;" disabled></td>
+                    <td><input type="text" name="currentTime" value="<?= $reservasi['currentTime']; ?>" style="border: none;" readonly></td>
                 </tr>
                 <tr>
                     <td style="font-weight: bold;">Nama Tamu</td>
@@ -86,18 +86,18 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td style="font-weight: bold;">Jenis Kamar</td>
-                        <td>:</td>
-                        <td><?php echo $kamar['jenis_kamar']; ?></td>
+                        <td style="font-weight: bold;">No Kamar</td>
+                        <td>: <?php echo $reservasi['no_kamar']; ?></td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td style="font-weight: bold;">Check In</td>
-                        <td>:</td>
+                        <td>: <?= $reservasi['checkin']; ?></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td style="font-weight: bold;">Check Out</td>
-                        <td>:</td>
+                        <td>: <?= $reservasi['checkout']; ?></td>
                         <td></td>
                     </tr>
                 </tbody>
@@ -113,7 +113,7 @@
                 <tbody>
                     <tr>
 						<td style="font-weight: bold;">Biaya</td>
-                        <td>:</td>
+                        <td>: <?= $reservasi['harga']; ?></td>
 						<td></td>
 					</tr>
                     <tr>
