@@ -64,19 +64,19 @@ $checkout = date('Y/m/d',strtotime($_POST['checkout']));
 					</tr>
 					<tr>
 						<td style="font-weight: bold;">Jenis Kamar</td>
-						<td><input type="text" name="jenis kamar" id="jenis kamar" style="border: none;" class="form-control" value="<?php echo $kamar['jenis_kamar']; ?>" disabled></td>
+						<td><input type="text" name="jenis kamar" id="jenis kamar" style="border: none;" value="<?php echo $kamar['jenis_kamar']; ?>" disabled></td>
 					</tr>
 					<tr>
 						<td style="font-weight: bold;">Check In</td>
-						<td><input type="text" name="checkin" id="checkin" style="border: none;"  class="form-control" value ="<?php  echo $checkin ?>"disabled></td>
+						<td><input type="text" name="checkin" id="checkin" style="border: none;"  value ="<?php  echo $checkin ?>"disabled></td>
 					</tr>
 					<tr>
 						<td style="font-weight: bold;">Check Out</td>
-						<td><input type="text" name="checkout" id="checkout" style="border: none;" class="form-control" value ="<?php  echo $checkout ?>" disabled></td>
+						<td><input type="text" name="checkout" id="checkout" style="border: none;" value ="<?php  echo $checkout ?>" disabled></td>
 					</tr>
 					<tr>
 						<td style="font-weight: bold;">Biaya</td>
-						<td><input type="text" name="biaya" id="biaya" style="border: none"  class="form-control" value="<?php echo $days*$kamar['harga']?>" disabled></td>
+						<td><input type="text" name="biaya" id="biaya" style="border: none"  value="<?php echo $days*$kamar['harga']?>" disabled></td>
 					</tr>
 					<tr>
 						<td style="font-weight: bold;">Status</td>
