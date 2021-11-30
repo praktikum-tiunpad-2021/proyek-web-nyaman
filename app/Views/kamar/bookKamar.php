@@ -29,9 +29,20 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
 	} 
 } 
 addLoadEvent(getWaktu); 
-addLoadEvent(noPemesanan); 
+addLoadEvent(noPemesanan);
+
 </script>
 <body>
+	<?php
+$date1 = strtotime($_POST['checkin']);
+$date2 = strtotime($_POST['checkout']);
+ $checkin = date('Y/m/d',strtotime($_POST['checkin'])); 
+$checkout = date('Y/m/d',strtotime($_POST['checkout'])); 
+ $diff = abs(($date2) - ($date1));;
+ $years = floor($diff / (365*60*60*24));
+ $months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
+ $days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
+	?>   
 	<div class="main mx-4">
 	<h2 class="text-center pt-5" style="font-weight: bold;">Konfirmasi Pemesanan Kamar Hotel</h2>
     <hr>
@@ -56,11 +67,15 @@ addLoadEvent(noPemesanan);
 					</tr>
 					<tr>
 						<td style="font-weight: bold;">Check In</td>
-						<td><input type="text" name="checkin" id="checkin" style="border: none;" disabled></td>
+						<td><input type="text" name="checkin" id="checkin" style="border: none;" value ="<?php  echo $checkin ?>"disabled></td>
 					</tr>
 					<tr>
 						<td style="font-weight: bold;">Check Out</td>
-						<td><input type="text" name="checkout" id="checkout" style="border: none;" disabled></td>
+						<td><input type="text" name="checkout" id="checkout" style="border: none;"value ="<?php  echo $checkout ?>" disabled></td>
+					</tr>
+					<tr>
+						<td style="font-weight: bold;">Biaya</td>
+						<td><input type="text" name="biaya" id="biaya" style="border: none" value="<?php echo $days*$kamar['harga']?>" disabled></td>
 					</tr>
 					<tr>
 						<td style="font-weight: bold;">Status Pemesanan</td>

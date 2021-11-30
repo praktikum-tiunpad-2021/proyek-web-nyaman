@@ -29,7 +29,7 @@
         <p class="mx-0 text-justify"><?= $detail['deskripsi']; ?></p>
         <br>
         <?php if(session()->get('role') == 'tamu'){?>
-            <form action="#" method="post">
+            <form action="/ListKamar/book/<?= $kamar['id_kamar'];?>" method="post">
                 <table>
                     <tr>
                         <td class="col-6"><label for="checkin">Check-in</label></td>
