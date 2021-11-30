@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 27, 2021 at 12:59 AM
+-- Generation Time: Nov 30, 2021 at 07:20 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.2
 
@@ -92,6 +92,34 @@ CREATE TABLE `kamar` (
   `id_kamar` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `kamar`
+--
+
+INSERT INTO `kamar` (`no_kamar`, `id_kamar`) VALUES
+(101, 1),
+(103, 1),
+(104, 1),
+(105, 1),
+(106, 1),
+(102, 2),
+(201, 2),
+(202, 2),
+(203, 2),
+(204, 2),
+(301, 3),
+(302, 3),
+(303, 3),
+(304, 3),
+(401, 4),
+(402, 4),
+(403, 4),
+(404, 4),
+(501, 5),
+(502, 5),
+(601, 6),
+(602, 6);
+
 -- --------------------------------------------------------
 
 --
@@ -99,11 +127,13 @@ CREATE TABLE `kamar` (
 --
 
 CREATE TABLE `reservasi` (
-  `id_reservasi` int(11) NOT NULL,
+  `no_pesanan` int(11) NOT NULL,
   `username` varchar(20) NOT NULL,
   `no_kamar` int(11) NOT NULL,
   `checkin` date NOT NULL,
-  `checkout` date NOT NULL
+  `checkout` date NOT NULL,
+  `harga` float NOT NULL,
+  `currentTime` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -159,9 +189,9 @@ ALTER TABLE `kamar`
 -- Indexes for table `reservasi`
 --
 ALTER TABLE `reservasi`
-  ADD PRIMARY KEY (`id_reservasi`),
-  ADD KEY `username` (`username`),
-  ADD KEY `no_kamar` (`no_kamar`);
+  ADD PRIMARY KEY (`no_pesanan`),
+  ADD KEY `fk_user` (`username`),
+  ADD KEY `fk_nokamar` (`no_kamar`);
 
 --
 -- Indexes for table `user`
@@ -174,22 +204,10 @@ ALTER TABLE `user`
 --
 
 --
--- AUTO_INCREMENT for table `detail_kamar`
---
-ALTER TABLE `detail_kamar`
-  MODIFY `id_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
 -- AUTO_INCREMENT for table `jenis_kamar`
 --
 ALTER TABLE `jenis_kamar`
-  MODIFY `id_kamar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT for table `reservasi`
---
-ALTER TABLE `reservasi`
-  MODIFY `id_reservasi` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_kamar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- Constraints for dumped tables
@@ -205,14 +223,14 @@ ALTER TABLE `detail_kamar`
 -- Constraints for table `kamar`
 --
 ALTER TABLE `kamar`
-  ADD CONSTRAINT `kamar_ibfk_2` FOREIGN KEY (`no_kamar`) REFERENCES `reservasi` (`no_kamar`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `kamar_ibfk_3` FOREIGN KEY (`id_kamar`) REFERENCES `jenis_kamar` (`id_kamar`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `reservasi`
 --
 ALTER TABLE `reservasi`
-  ADD CONSTRAINT `reservasi_ibfk_1` FOREIGN KEY (`username`) REFERENCES `user` (`username`);
+  ADD CONSTRAINT `reservasi_ibfk_1` FOREIGN KEY (`username`) REFERENCES `user` (`username`),
+  ADD CONSTRAINT `reservasi_ibfk_2` FOREIGN KEY (`no_kamar`) REFERENCES `kamar` (`no_kamar`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
