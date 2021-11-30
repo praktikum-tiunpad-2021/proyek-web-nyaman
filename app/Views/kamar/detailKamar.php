@@ -41,7 +41,7 @@
                     </tr>
                 </table>
                 <br>
-                <input type="submit" value="Book" class="btn btn-1">
+                <input type="submit" value="Book" class="btn btn-success mx-2">
             </form>
         <?php } ?>
         </div>
@@ -96,7 +96,6 @@
                     <td><?= $detail['sarapan']; ?> </td>
                 </tr>
             </table>
-            <a href="/bookKamar/<?= $kamar['id_kamar']; ?>" class="btn btn-success mx-2">Book Kamar</a><br><br>
         </div>
     </div>
 </div>
