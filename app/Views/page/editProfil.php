@@ -3,21 +3,11 @@
 
 
 <?php echo link_tag('assets/css/profil.css');?>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
-<div class="main-content">
-    <div class="container-fluid mt--7">
+<div class="main">
+    <div class="container-fluid mt-4">
       <div class="row">
-        <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
+      <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
           <div class="card card-profile shadow">
             <div class="row justify-content-center">
               <div class="col-lg-3 order-lg-2">
@@ -28,12 +18,7 @@
                 </div>
               </div>
             </div>
-            <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
-              <div class="d-flex justify-content-between">
-                
-              </div>
-            </div>
-            <div class="card-body pt-0 pt-md-4">
+            <div class="card-body pt-0">
               <div class="row">
                 <div class="col">
                   </br>
@@ -41,13 +26,10 @@
                 </div>
               </div>
               <div class="text-center">
-                <h3>
-                <?php echo (session()->get('first_name'))."  ".(session()->get('last_name'))?><span class="font-weight-light">, 25</span>
-                </h3>
+                <h3><?= $user['first_name']; ?><span class="font-weight-light"> </span> <?= $user['last_name']; ?></h3>
                 <div class="h5 font-weight-300">
-                  <i class="ni location_pin mr-2"></i> <?php echo (session()->get('alamat'))?>
+                  <?= $user['alamat']; ?>
                 </div>
-                
               </div>
             </div>
           </div>
@@ -59,38 +41,37 @@
                 <div class="col-8">
                   <h3 class="mb-0">My account</h3>
                 </div>
-             
               </div>
             </div>
             <div class="card-body">
-              <form>
+              <form action="/Login/update/<?php echo session()->get('username') ?>" method="post">
                 <h6 class="heading-small text-muted mb-4">User information</h6>
                 <div class="pl-lg-4">
                   <div class="row">
                     <div class="col-lg-6">
                       <div class="form-group focused">
-                        <label class="form-control-label" for="input-username">Username</label>
-                        <input type="text" id="input-username" class="form-control form-control-alternative" value=" <?php echo (session()->get('username'))?>"disabled>
+                        <label class="form-control-label" for="username">Username</label>
+                        <input type="text" name="username" class="form-control form-control-alternative" value="<?= $user['username']; ?>"disabled>
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <div class="form-group">
-                        <label class="form-control-label" for="input-email">Email address</label>
-                        <input type="email" id="input-email" class="form-control form-control-alternative" value=" <?php echo (session()->get('email'))?>"disabled>
+                        <label class="form-control-label" for="email">Email address</label>
+                        <input type="email" name="email" class="form-control form-control-alternative" value="<?= $user['email']; ?>"disabled>
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-lg-6">
                       <div class="form-group focused">
-                        <label class="form-control-label" for="input-first-name">First name</label>
-                        <input type="text" id="input-first-name" class="form-control form-control-alternative" value=" <?php echo (session()->get('first_name'))?>">
+                        <label class="form-control-label" for="first_name">First name</label>
+                        <input type="text" name="first_name" class="form-control form-control-alternative" value="<?= $user['first_name']; ?>">
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <div class="form-group focused">
-                        <label class="form-control-label" for="input-last-name">Last name</label>
-                        <input type="text" id="input-last-name" class="form-control form-control-alternative" value=" <?php echo (session()->get('last_name'))?>">
+                        <label class="form-control-label" for="last_name">Last name</label>
+                        <input type="text" name="last_name" class="form-control form-control-alternative" value="<?= $user['last_name']; ?>">
                       </div>
                     </div>
                   </div>
@@ -102,25 +83,22 @@
                   <div class="row">
                     <div class="col-md-12">
                       <div class="form-group focused">
-                        <label class="form-control-label" for="input-address">Alamat</label>
-                        <input id="input-address" class="form-control form-control-alternative" value=" <?php echo (session()->get('alamat'))?>">
+                        <label class="form-control-label" for="alamat">Alamat</label>
+                        <input name="alamat" class="form-control form-control-alternative" value="<?= $user['alamat']; ?>">
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-lg-4">
                       <div class="form-group focused">
-                        <label class="form-control-label" for="input-city">No_HP</label>
-                        <input type="text" id="input-city" class="form-control form-control-alternative" value=" <?php echo (session()->get('no_hp'))?>">
+                        <label class="form-control-label" for="no_hp">No_HP</label>
+                        <input type="text" name="no_hp" class="form-control form-control-alternative" value="<?= $user['no_hp']; ?>">
                       </div>
-                   </d iv>
-                 
+                    </div>
                   </div>
                 </div>
                 <hr class="my-4">
-                  <a href="#!" class="btn btn-success">Simpan</a>
-                  </div>
-                </div>
+                <button type="submit" class="btn btn-success">Simpan</button>
               </form>
             </div>
           </div>

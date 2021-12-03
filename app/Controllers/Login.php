@@ -9,10 +9,42 @@ class Login extends BaseController{
         $this->LoginModel = new LoginModel();
     }
     public function viewProfil(){
-        return view('page/Profil');
+        if(session()->get('username') == ''){
+            session()->setFlashdata('gagal', 'Silahkan Login terlebih dahulu!!');
+            return redirect()->to(base_url('/Sign-In'));
+        }
+        $username = session()->get('username');
+        $data=[
+            'user' => $this->LoginModel->getUser($username)
+        ];
+        //dd($data);
+        
+        return view('page/Profil', $data);
     }
     public function editProfil(){
-        return view('page/editProfil');
+        if(session()->get('username') == ''){
+            session()->setFlashdata('gagal', 'Silahkan Login terlebih dahulu!!');
+            return redirect()->to(base_url('/Sign-In'));
+        }
+        $username = session()->get('username');
+        $data=[
+            'user' => $this->LoginModel->getUser($username)
+        ];
+
+        //dd($data);
+        return view('page/editProfil', $data);
+    }
+
+    public function update($username){
+        //dd($this->request->getVar());
+        $this->LoginModel->save([
+            'username' => $username,
+            'first_name' => $this->request->getVar('first_name'),
+            'last_name' => $this->request->getVar('last_name'),
+            'alamat' => $this->request->getVar('alamat'),
+            'no_hp' => $this->request->getVar('no_hp')
+        ]);
+        return redirect()->to(base_url('/Profil'));
     }
 
     public function ViewSignIn(){
@@ -27,12 +59,6 @@ class Login extends BaseController{
         
         if (($cek['username']==$username) && ($cek['password']==$password)){
             session()->set('username', $cek['username']);
-            session()->set('first_name', $cek['first_name']);
-            session()->set('last_name', $cek['last_name']);
-            session()->set('alamat', $cek['alamat']);
-            session()->set('email', $cek['email']);
-            session()->set('no_hp', $cek['no_hp']);
-            session()->set('role', $cek['role']);
             return redirect()->to(base_url('/'));
         }
         else{

@@ -26,13 +26,10 @@
                 </div>
               </div>
               <div class="text-center">
-                <h3>
-                <?php echo (session()->get('first_name'))."  ".(session()->get('last_name'))?><span class="font-weight-light">, 25</span>
-                </h3>
+                <h3><?= $user['first_name']; ?><span class="font-weight-light"> </span> <?= $user['last_name']; ?></h3>
                 <div class="h5 font-weight-300">
-                  <i class="ni location_pin mr-2"></i> <?php echo (session()->get('alamat'))?>
+                  <?= $user['alamat']; ?>
                 </div>
-                
               </div>
             </div>
           </div>
@@ -44,7 +41,6 @@
                 <div class="col-8">
                   <h3 class="mb-0">My account</h3>
                 </div>
-             
               </div>
             </div>
             <div class="card-body">
@@ -55,13 +51,13 @@
                     <div class="col-lg-6">
                       <div class="form-group focused">
                         <label class="form-control-label" for="input-username">Username</label>
-                        <input type="text" id="input-username" class="form-control form-control-alternative" value=" <?php echo (session()->get('username'))?>"disabled>
+                        <input type="text" id="input-username" class="form-control form-control-alternative" value="<?= $user['username']; ?>"disabled>
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label" for="input-email">Email address</label>
-                        <input type="email" id="input-email" class="form-control form-control-alternative" value=" <?php echo (session()->get('email'))?>"disabled>
+                        <input type="email" id="input-email" class="form-control form-control-alternative" value="<?= $user['email']; ?>"disabled>
                       </div>
                     </div>
                   </div>
@@ -69,13 +65,13 @@
                     <div class="col-lg-6">
                       <div class="form-group focused">
                         <label class="form-control-label" for="input-first-name">First name</label>
-                        <input type="text" id="input-first-name" class="form-control form-control-alternative" value=" <?php echo (session()->get('first_name'))?>"disabled>
+                        <input type="text" id="input-first-name" class="form-control form-control-alternative" value=" <?= $user['first_name']; ?>"disabled>
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <div class="form-group focused">
                         <label class="form-control-label" for="input-last-name">Last name</label>
-                        <input type="text" id="input-last-name" class="form-control form-control-alternative" value=" <?php echo (session()->get('last_name'))?>"disabled>
+                        <input type="text" id="input-last-name" class="form-control form-control-alternative" value="<?= $user['last_name']; ?>"disabled>
                       </div>
                     </div>
                   </div>
@@ -88,18 +84,17 @@
                     <div class="col-md-12">
                       <div class="form-group focused">
                         <label class="form-control-label" for="input-address">Alamat</label>
-                        <input id="input-address" class="form-control form-control-alternative" value=" <?php echo (session()->get('alamat'))?>"disabled>
+                        <input id="input-address" class="form-control form-control-alternative" value="<?= $user['alamat']; ?>"disabled>
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-lg-4">
                       <div class="form-group focused">
-                        <label class="form-control-label" for="input-city">No_HP</label>
-                        <input type="text" id="input-city" class="form-control form-control-alternative" value=" <?php echo (session()->get('no_hp'))?>"disabled>
+                        <label class="form-control-label" for="input-city">No HP</label>
+                        <input type="text" id="input-city" class="form-control form-control-alternative" value="<?= $user['no_hp']; ?>"disabled>
                       </div>
-                   </d iv>
-                 
+                    </div>
                   </div>
                 </div>
                 <hr class="my-4">
