@@ -12,9 +12,7 @@ var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
   document.getElementById("currentTime").value = date +" " + time;
   }
-  function noPemesanan(){
-    document.getElementById("nopesan").value = Math.floor(Math.random() * 100);
-  }
+  
   function addLoadEvent(func) { 
 	var oldonload = window.onload; 
 	if (typeof window.onload != 'function') { 
@@ -29,8 +27,6 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
 	} 
 } 
 addLoadEvent(getWaktu); 
-addLoadEvent(noPemesanan);
-
 </script>
 <body>
 	<?php
@@ -50,10 +46,6 @@ $checkout = date('Y/m/d',strtotime($_POST['checkout']));
 		<form action="/ReservasiKamar/simpan/<?php echo session()->get('username')?>" method="post">  
 			<table class="table table-striped">
 				<tbody>
-					<tr>
-						<td style="font-weight: bold;">Nomor Pemesanan</td>
-						<td><input type="text" name="nopesan" id="nopesan" style="border: none;" readonly></td>
-      				</tr>
 					<tr>
 						<td style="font-weight: bold;">Pemesanan dilakukan pada</td>
 						<td><input type="text" name="currentTime" id="currentTime" style="border: none;" readonly></td>

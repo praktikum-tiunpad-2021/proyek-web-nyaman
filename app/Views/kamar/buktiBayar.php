@@ -1,33 +1,8 @@
 <?= $this->extend('/base'); ?>
 <?= $this->section('content'); ?>
 
-<script>
-    function getWaktu(){
-        var today = new Date();
-        var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-        document.getElementById("currentTime").value = date +" " + time;
-    }
-    function noPemesanan(){
-        document.getElementById("nopesan").value = Math.floor(Math.random() * 100);
-    }
-    function addLoadEvent(func) { 
-        var oldonload = window.onload; 
-        if (typeof window.onload != 'function') { 
-            window.onload = func; 
-        } else { 
-            window.onload = function() { 
-                if (oldonload) { 
-                    oldonload(); 
-                } 
-                func(); 
-            } 
-        } 
-    } 
-    addLoadEvent(getWaktu); 
-    addLoadEvent(noPemesanan);
-</script>
-<style>
+
+    
     td {
         padding-bottom: 5px;
         font-size: 15px;
