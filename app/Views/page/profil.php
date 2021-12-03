@@ -3,19 +3,9 @@
 
 
 <?php echo link_tag('assets/css/profil.css');?>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
-<div class="main-content">
-    <div class="container-fluid mt--7">
+<div class="main">
+    <div class="container-fluid mt-4">
       <div class="row">
         <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
           <div class="card card-profile shadow">
@@ -28,12 +18,7 @@
                 </div>
               </div>
             </div>
-            <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
-              <div class="d-flex justify-content-between">
-                
-              </div>
-            </div>
-            <div class="card-body pt-0 pt-md-4">
+            <div class="card-body pt-0">
               <div class="row">
                 <div class="col">
                   </br>
