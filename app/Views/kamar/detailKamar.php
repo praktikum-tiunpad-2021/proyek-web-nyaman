@@ -1,6 +1,28 @@
 <?= $this->extend('/base'); ?>
 <?= $this->section('content'); ?>
+<script>
+    function TDate() {
+    var UserDate = document.getElementById("checkin").value;
+    var ToDate = new Date();
 
+    if (new Date(UserDate).getTime() <= ToDate.getTime()) {
+          alert("Mohon ganti Waktu Checkin dengan Tanggal Yang Sesuai");
+          return false;
+     }
+    return true;
+}
+function Diff() {
+    var UserDate = document.getElementById("checkin").value;
+    var UserDate2 = document.getElementById("checkout").value;
+    var ToDate = new Date();
+
+    if (new Date(UserDate2).getTime() <= new Date(UserDate).getTime()) {
+          alert("Tanggal Checkout harus lebih besar dari Checkin");
+          return false;
+     }
+    return true;
+}
+</script>
 <div class="main mx-4">
     <nav class="pt-4">
         <ul class="breadcrumb">
@@ -33,11 +55,11 @@
                 <table>
                     <tr>
                         <td class="col-6"><label for="checkin">Check-in</label></td>
-                        <td><input type="date" name="checkin" id="checkin" class="form-control"></td>
+                        <td><input type="date" name="checkin" id="checkin" class="form-control"onchange="TDate()" ></td>
                     </tr>
                     <tr>
                         <td><label for="checkout">Check-out</label></td>
-                        <td><input type="date" name="checkout" id="checkout" class="form-control"></td>
+                        <td><input type="date" name="checkout" id="checkout" class="form-control" onchange=" Diff()"></td>
                     </tr>
                 </table>
                 <br>
