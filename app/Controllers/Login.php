@@ -59,6 +59,9 @@ class Login extends BaseController{
         
         if (($cek['username']==$username) && ($cek['password']==$password)){
             session()->set('username', $cek['username']);
+            session()->set('first_name', $cek['first_name']);
+            session()->set('last_name', $cek['last_name']);
+             session()->set('role', $cek['role']);
             return redirect()->to(base_url('/'));
         }
         else{

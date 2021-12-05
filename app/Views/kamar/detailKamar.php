@@ -50,7 +50,7 @@ function Diff() {
         <br>
         <p class="mx-0 text-justify"><?= $detail['deskripsi']; ?></p>
         <br>
-        <?php if(session()->get('role') == 'tamu'){?>
+        <?php if(session()->get('role') != 'admin'){?>
             <form action="/ListKamar/book/<?= $kamar['id_kamar'];?>" method="post">
                 <table>
                     <tr>
