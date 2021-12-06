@@ -28,7 +28,6 @@ class ReservasiKamar extends BaseController{
 
     public function simpan($username){
         //dd($this->request->getVar());
-        
         $kamar = $this->ListKamarModel->where(['jenis_kamar' => $this->request->getVar('jenis_kamar')])->first();
         $id_kamar = $kamar['id_kamar'];
         $kamar2 = $this->KamarModel->where(['id_kamar' => $id_kamar])->first();
@@ -38,9 +37,7 @@ class ReservasiKamar extends BaseController{
             'no_kamar' => $no_kamar
         ];
         //dd($data);
-        $no_pesanan = $this->request->getVar('nopesan');
         $this->ReservasiKamarModel->save([
-            'no_pesanan' => $no_pesanan,
             'username' => $username,
             'currentTime' => $this->request->getVar('currentTime'),
             'no_kamar' => $no_kamar,
@@ -48,7 +45,7 @@ class ReservasiKamar extends BaseController{
             'checkin' => $this->request->getVar('checkin'),
             'checkout' => $this->request->getVar('checkout')
         ]);
-        return redirect()->to(base_url('ReservasiKamar/bukti/'.$no_pesanan));
+        return redirect()->to(base_url('ReservasiKamar/bukti/'.$no_kamar));
     }
     
     public function bukti($no_pesanan){

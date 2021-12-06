@@ -8,11 +8,11 @@ class ReservasiKamarModel extends Model{
     protected $primaryKey = 'no_pesanan';
     protected $allowedFields = ['no_pesanan','no_kamar','username','checkin', 'checkout', 'currentTime', 'harga'];
 
-    public function getReservasi($no_pesanan = false){
-        if($no_pesanan == false){
+    public function getReservasi($no_kamar = false){
+        if($no_kamar == false){
             return $this->findAll();
         }
-        return $this->where(['no_pesanan' => $no_pesanan])->first();
+        return $this->where(['no_kamar' => $no_kamar])->first();
     }
 
 }
