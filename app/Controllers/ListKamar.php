@@ -3,13 +3,16 @@
 namespace App\Controllers;
 use App\Models\ListKamarModel;
 use App\Models\DetailKamarModel;
+use App\Models\KamarModel;
 
 class ListKamar extends BaseController{
     protected $ListKamarModel;
     protected $DetailKamarModel;
+    protected $KamarModel;
     public function __construct(){
         $this->ListKamarModel = new ListKamarModel();
         $this->DetailKamarModel = new DetailKamarModel();
+        $this->KamarModel = new KamarModel();
     }
 
     public function index()
@@ -29,7 +32,8 @@ class ListKamar extends BaseController{
         }
         $data=[
             'kamar' =>  $this->ListKamarModel->getListKamar($id_kamar),
-            'detail' => $this->DetailKamarModel->getDetail($id_kamar)
+            'detail' => $this->DetailKamarModel->getDetail($id_kamar),
+            'no' => $this->KamarModel->getNoKamar($id_kamar)
         ];
         //dd($data);
         if(empty($data['detail'])){
