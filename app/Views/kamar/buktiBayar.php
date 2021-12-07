@@ -93,7 +93,7 @@
 					</tr>
                     <tr>
 						<td style="font-weight: bold;">Metode Pembayaran</td>
-                        <td>:</td>
+                        <td>: Bayar di Tempat</td>
 						<td></td>
 					</tr>
                 </tbody>

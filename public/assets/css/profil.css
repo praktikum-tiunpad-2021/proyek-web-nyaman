@@ -554,7 +554,7 @@
   }
   
   .card {
-    margin-top: 4rem;
+    margin-top: 8rem;
     display: flex;
     flex-direction: column;
     min-width: 0;
@@ -708,7 +708,7 @@
   .float-right {
     float: right !important;
   }
-  
+
   .shadow,
   .card-profile-image img {
     box-shadow: 0 0 2rem 0 rgba(136, 152, 170, .15) !important;
@@ -1068,7 +1068,7 @@
   
   .card-profile-image img {
     max-width: 120px;
-    margin: -50% -30%;
+    margin: -50% -10%;
   }
   
   .card-profile-image img:hover {

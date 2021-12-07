@@ -52,7 +52,7 @@ $checkout = date('Y/m/d',strtotime($_POST['checkout']));
 					</tr>
 					<tr>
 						<td style="font-weight: bold;">Nama Pemesan</td>
-						<td> <input type="text" name="namapemesan" value = "<?php echo (session()->get('first_name'))."  ".(session()->get('last_name')) ?>" readonly></td>
+						<td> <input type="text" name="namapemesan" style="border: none;" value = "<?php echo (session()->get('first_name'))."  ".(session()->get('last_name')) ?>" readonly></td>
 					</tr>
 					<tr>
 						<td style="font-weight: bold;">Jenis Kamar</td>

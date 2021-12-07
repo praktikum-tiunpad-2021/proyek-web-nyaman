@@ -5,7 +5,7 @@
     <h1 class="text-center pt-5">LIST KAMAR</h1>
     <hr>
     <?php if(session()->get('role') == 'admin'){?>
-    <div class="d-flex justify-content-end mx-3">
+    <div class="d-flex justify-content-end mx-3 mt-4">
         <a href="/tambah-kamar" class="btn btn-success">Tambah Kamar</a>
     </div>
     <?php } ?>
