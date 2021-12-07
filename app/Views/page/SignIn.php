@@ -18,9 +18,7 @@
                 <?php echo session()->getFlashdata('gagal'); ?>
             </div>
             <?php } ?>
-                <?php 
-                echo form_open('Login/cek_login');
-                ?>
+                <form action="Login/cek_login" method="post">
                     <h1 class="text-center">Login</h1><br>
                     <label for="username">Username</label>
                     <input type="text" name="username" class="form-control" required><br>
@@ -42,7 +40,7 @@
                     <div class="d-flex justify-content-center mt-2">
                     <input type="submit" name="submit" id="submit" class="col-4 btn-login alert" value="Sign In!">
                     </div>
-                <?php echo form_close(); ?>
+                </form>
                     <center><p style="font-size: 13px;">Don't have an account? <u><a href="/Sign-Up">Sign Up</a></u> here</p></center>
                 
             </div>

@@ -13,7 +13,7 @@
         </div>
         <div class="col">
             <div class="kotak-signup">
-                <form method="post">
+                <form action="Login/register" method="post">
                     <h1 class="text-center">Create Account</h1><br>
                     <div class="form">
                         <label for="fname">First Name
@@ -68,12 +68,11 @@
                     <p style="font-size: 13px;">By creating an account, you agree with our <u><a href="T&C" style="color: #fff;">Terms & Conditions</a></u> and <u><a href="PP" style="color: #fff;">Privacy Policy</a></u>.</p>
 
                     <div class="d-flex justify-content-center mt-2">
-                        <input type="submit" name="submit" id="submit" class="col-4 btn-login alert" value="Sign Up!">
+                        <button type="submit" class="col-4 btn-login alert">Sign Up!</button>
                     </div>    
-                    
+                </form>    
                     <br>
                     <center><p style="font-size: 13px;">Already have an account? <u><a href="/Sign-In">Sign In</a></u> here</p></center>
-                </form>
             </div>
         </div>    
     </div>
