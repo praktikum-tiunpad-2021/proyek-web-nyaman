@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 class ReservasiKamarModel extends Model{
     protected $table = 'reservasi';
     protected $primaryKey = 'no_pesanan';
-    protected $allowedFields = ['no_pesanan','no_kamar','username','checkin', 'checkout', 'currentTime', 'harga'];
+    protected $allowedFields = ['no_pesanan','no_kamar','username','checkin', 'checkout', 'currentTime', 'harga', 'status'];
 
     public function getReservasi($no_pesanan = false){
         if($no_pesanan == false){

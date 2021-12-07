@@ -17,7 +17,8 @@
                     <a href="/Profil">Profil</a>
                     <a href="<?= base_url('login/logout'); ?>">Logout</a>
                 </div>
-            </div> 
+            </div>
+            <a href="/reservasi">Reservasi</a></li> 
             <?php if(session()->get('username') == 'admin'){?>
             <div class="dropdown">
                 <button class="dropbtn">Kamar 

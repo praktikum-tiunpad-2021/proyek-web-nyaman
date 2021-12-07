@@ -58,10 +58,10 @@ class ReservasiKamar extends BaseController{
             'no_kamar' => $no_kamar,
             'harga' => $this->request->getVar('biaya'),
             'checkin' => $this->request->getVar('checkin'),
-            'checkout' => $this->request->getVar('checkout')
+            'checkout' => $this->request->getVar('checkout'),
+            'status' => 'Belum Selesai'
         ]);
         $pesanan = $this->ReservasiKamarModel->where(['no_kamar' => $no_kamar])->first();
-        //$nopesan = $pesanan['no_pesanan'];
         //dd($nopesan);
         return redirect()->to(base_url('ReservasiKamar/bukti/'.$pesanan['no_pesanan']));
     }
