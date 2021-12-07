@@ -3,12 +3,15 @@
 namespace App\Controllers;
 use App\Models\ListKamarModel;
 use App\Models\DetailKamarModel;
+use App\Models\KamarModel;
 class ListKamar extends BaseController{
     protected $ListKamarModel;
     protected $DetailKamarModel;
+    protected $KamarModel;
     public function __construct(){
         $this->ListKamarModel = new ListKamarModel();
         $this->DetailKamarModel = new DetailKamarModel();
+        $this->KamarModel = new KamarModel();
     }
 
     public function index()
