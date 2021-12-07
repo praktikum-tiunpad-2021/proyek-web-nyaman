@@ -68,7 +68,7 @@
                     <p style="font-size: 13px;">By creating an account, you agree with our <u><a href="T&C" style="color: #fff;">Terms & Conditions</a></u> and <u><a href="PP" style="color: #fff;">Privacy Policy</a></u>.</p>
 
                     <div class="d-flex justify-content-center mt-2">
-                        <button type="submit" class="col-4 btn-login alert">Sign Up!</button>
+                        <button type="submit" id= "submit" class="col-4 btn-login alert">Sign Up!</button>
                     </div>    
                 </form>    
                     <br>

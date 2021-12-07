@@ -5,11 +5,12 @@
     var UserDate = document.getElementById("checkin").value;
     var ToDate = new Date();
 
-    if (new Date(UserDate).getTime() <= ToDate.getTime()) {
-          alert("Mohon ganti Waktu Checkin dengan Tanggal Yang Sesuai");
-          return false;
-     }
-    return true;
+    if (new Date(UserDate).getTime() >= ToDate.getTime()) {
+          return true;
+    } else {
+        alert("Mohon ganti Waktu Checkin dengan Tanggal Yang Sesuai");
+        return false;
+    }
 }
 function Diff() {
     var UserDate = document.getElementById("checkin").value;
