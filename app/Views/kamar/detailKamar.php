@@ -121,7 +121,19 @@ function Diff() {
                     <td>Sarapan</td>
                     <td><?= $detail['sarapan']; ?> </td>
                 </tr>
-                
+                <tr>
+                <?php
+                $i = 0;
+               foreach($no as $k) : ?>
+                    <td>List Kamar</td>
+                    <td><?= $k['no_kamar']; ?> </td>
+                    <?php
+                    $i++;
+                    ?>
+                </tr>
+                 <?php endforeach; ?>
+                 <td>Jumlah Kamar</td>
+                    <td><?= $i ?> </td>
             </table>
         </div>
     </div>
