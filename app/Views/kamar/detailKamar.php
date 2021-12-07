@@ -5,14 +5,20 @@
     var UserDate = document.getElementById("checkin").value;
     var ToDate = new Date();
     var UserDate2 = document.getElementById("checkout").value;
-
+    var x= document.getElementById('jumlah').value;
+    if (x==0){
+        alert("Mohon Maaf Kamar Sudah Habis");
+          return false;
+    }
     if (new Date(UserDate).getTime() <= ToDate.getTime()) {
         alert("Mohon Masukkan Waktu Checkin dengan benar");
           return false;
     } else if (new Date(UserDate2).getTime() <= new Date(UserDate).getTime()) {
           alert("Tanggal Checkout harus lebih besar dari Checkin");
           return false;
-     }else  
+     }else 
+      
+     document.getElementById('jumlah').value = --x;
     return true;
 }
 function Diff() {
@@ -133,7 +139,7 @@ function Diff() {
                 </tr>
                  <?php endforeach; ?>
                  <td>Jumlah Kamar</td>
-                    <td><?= $i ?> </td>
+                    <td><input type="text" name="jumlah" id="jumlah" style="border: none;" value="<?php echo $i ?>"readonly</td>
             </table>
         </div>
     </div>
