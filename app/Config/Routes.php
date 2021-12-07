@@ -44,6 +44,7 @@ $routes->get('/tambah-kamar', 'ListKamar::create');
 $routes->get('/editProfil', 'Login::editProfil');
 $routes->get('/bookKamar/(:any)', 'ListKamar::book/$1');
 $routes->get('/buktiBayar', 'ReservasiKamar::bukti/$1');
+$routes->get('/no-kamar', 'ListKamar::noKamar');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

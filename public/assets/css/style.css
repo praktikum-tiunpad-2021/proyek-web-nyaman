@@ -29,7 +29,8 @@ img {
 }
 
 .main {
-    margin-top: 65px;
+    margin-bottom: 16px;
+    margin-top: 40px;
 }
 
 /* Ini Breadcrumbs */
@@ -57,28 +58,67 @@ ul.breadcrumb {
 
 /*ini bagian nav*/
 
-.topnav{
-    overflow:visible;
+.navbar {
     position: fixed;
-    background-color: black;
-    height: max-content;
-    padding: 8px;
-    top: 0px;
+    background-color: #333;
     width: 100%;
-}
-
-.topnav a {
+    top: 0%;
+    height: max-content;
+  }
+  
+.navbar a {
     float: right;
+    font-size: 16px;
     color: #FFD700;
     text-align: center;
     padding: 16px 16px;
     text-decoration: none;
-    font-size: 17px;
-    border-bottom-right-radius: 16px;
 }
 
-.topnav a:hover {
-    color: antiquewhite;
+.dropdown {
+    float: right;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: #FFD700;
+    padding: 16px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: #f9f9f9;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 /*ini bagian home*/
@@ -364,4 +404,12 @@ fieldset {
     padding-top: 10px;
     background: #FFF8DC;
     box-shadow: inset 0px 0px 15px #FFE4C4;
+}
+
+/* buat noKamar */
+.addKamar{
+    border: 1px solid black;
+    padding: 8px;
+    font-weight: lighter;
+    border-radius: 8px;
 }

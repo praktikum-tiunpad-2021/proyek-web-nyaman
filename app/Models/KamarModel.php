@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 class KamarModel extends Model{
     protected $table = 'kamar';
     protected $primaryKey = 'no_kamar';
-    protected $allowedFields = ['id_kamar'];
+    protected $allowedFields = ['id_kamar', 'no_kamar'];
     protected $useAutoIncrement = false;
 
     public function getNoKamar($id_kamar = false){

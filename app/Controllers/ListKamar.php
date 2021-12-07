@@ -128,4 +128,29 @@ class ListKamar extends BaseController{
         ];
         return view('kamar/buktiBayar', $data);
     }
+
+    public function noKamar(){
+        $db      = \Config\Database::connect();
+        $builder = $db->table('kamar');
+        $builder->select('*');
+        $builder->join('jenis_kamar', 'kamar.id_kamar = jenis_kamar.id_kamar');
+        $query = $builder->get();
+        $data=[
+            'noKamar' => $this->KamarModel->getNoKamar(),
+            'kamar' => $this->ListKamarModel->getListKamar(),
+            'kamarno' => $query->getResultArray()
+        ];
+        // dd($data);
+        return view('kamar/noKamar', $data);
+    }
+
+    public function tambahNokamar(){
+        //dd($this->request->getVar());
+        $this->KamarModel->save([
+            'no_kamar'=>$this->request->getVar('no_kamar'),
+            'id_kamar' => $this->request->getVar('id_kamar')
+        ]);
+        session()->setFlashdata('pesan', 'Nomor Kamar baru berhasil ditambahkan');
+        return redirect()->to(base_url('/no-kamar'));
+    }
 }
