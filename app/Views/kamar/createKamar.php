@@ -92,11 +92,7 @@
                 <option>tidak ada</option>
                 </select>
             </div>
-            <div class="">
-                <label for="no_kamar" class="form-label" style="font-weight: bolder;">No Kamar</label>
-                <input type="text" class="form-control" name="no_kamar" required>
-            </div>
-                <div class="col-12">
+            <div class="col-12">
                 <button type="submit" class="btn btn-success">Tambah Kamar</button><br><br>
             </div>
             </form>

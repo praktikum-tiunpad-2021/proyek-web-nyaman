@@ -121,10 +121,7 @@ function Diff() {
                     <td>Sarapan</td>
                     <td><?= $detail['sarapan']; ?> </td>
                 </tr>
-                <tr>
-                    <td>No kamar</td>
-                    <td><?= $no['no_kamar']; ?> </td>
-                </tr>
+                
             </table>
         </div>
     </div>
