@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2021 at 07:20 PM
+-- Generation Time: Dec 08, 2021 at 12:35 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.2
 
@@ -49,6 +49,7 @@ CREATE TABLE `detail_kamar` (
 --
 
 INSERT INTO `detail_kamar` (`id_detail`, `id_kamar`, `deskripsi`, `luas_kamar`, `ranjang`, `ac`, `tv`, `wifi`, `tmp_penyimpanan`, `mini_bar`, `kamar_mandi`, `hair_dryer`, `air`, `sarapan`) VALUES
+(0, 22, '', 27, 'Queen Bed', 'ada', 'ada', 'ada', '', '', '', '', '', ''),
 (1, 1, 'Kamar Deluxe ini dilengkapi dengan furnitur eksklusif dan berbagai fasilitas pendukung dan juga pemandangan kota', 27, 'Queen atau Twin Single Bed', 'ada', 'ada', 'ada', 'ada', 'ada', 'ada', 'ada', 'ada', 'tidak ada'),
 (2, 2, 'Seluruh kamar Deluxe Premium didesain dengan elegan, dilengkapi dengan fasilitas modern yang lengkap untuk memastikan kenyaman Anda selama menginap di Hotel Nyaman', 29, 'Queen atau Twin Single Bed', 'ada', 'ada', 'ada', 'ada', 'ada', 'ada', 'ada', 'ada', 'ada'),
 (3, 3, 'Kamar Grand Deluxe seluas 32 meter persegi ini dilengkapi dengan tempat tidur ukuran queen dengan pilihan pemandangan kolam renang, serta dilengkapi fasilitas kamar standar.', 32, 'Queen Bed', 'ada', 'ada', 'ada', 'ada', 'ada', 'ada', 'ada', 'ada', 'ada'),
@@ -79,7 +80,8 @@ INSERT INTO `jenis_kamar` (`id_kamar`, `jenis_kamar`, `harga`, `gambar`) VALUES
 (3, 'Grand Deluxe Room', 400000, 'grand-deluxe.jpeg'),
 (4, 'Executive Room', 400000, 'executive-room.jpeg'),
 (5, 'Suite Room', 700000, 'suite-room.jpeg'),
-(6, 'Presidential Suite Room', 800000, 'presidential-suite-room.jpeg');
+(6, 'Presidential Suite Room', 800000, 'presidential-suite-room.jpeg'),
+(22, 'Standard Room', 250000, '');
 
 -- --------------------------------------------------------
 
@@ -89,36 +91,40 @@ INSERT INTO `jenis_kamar` (`id_kamar`, `jenis_kamar`, `harga`, `gambar`) VALUES
 
 CREATE TABLE `kamar` (
   `no_kamar` int(11) NOT NULL,
-  `id_kamar` int(11) NOT NULL
+  `id_kamar` int(11) NOT NULL,
+  `status` enum('kosong','terisi') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `kamar`
 --
 
-INSERT INTO `kamar` (`no_kamar`, `id_kamar`) VALUES
-(101, 1),
-(103, 1),
-(104, 1),
-(105, 1),
-(106, 1),
-(102, 2),
-(201, 2),
-(202, 2),
-(203, 2),
-(204, 2),
-(301, 3),
-(302, 3),
-(303, 3),
-(304, 3),
-(401, 4),
-(402, 4),
-(403, 4),
-(404, 4),
-(501, 5),
-(502, 5),
-(601, 6),
-(602, 6);
+INSERT INTO `kamar` (`no_kamar`, `id_kamar`, `status`) VALUES
+(101, 1, 'terisi'),
+(102, 2, 'kosong'),
+(103, 1, 'kosong'),
+(104, 1, 'kosong'),
+(105, 1, 'kosong'),
+(106, 1, 'kosong'),
+(108, 1, 'kosong'),
+(110, 1, 'kosong'),
+(201, 2, 'kosong'),
+(202, 2, 'kosong'),
+(203, 2, 'kosong'),
+(204, 2, 'kosong'),
+(205, 4, 'kosong'),
+(301, 3, 'kosong'),
+(302, 3, 'kosong'),
+(303, 3, 'kosong'),
+(304, 3, 'kosong'),
+(401, 4, 'kosong'),
+(402, 4, 'kosong'),
+(403, 4, 'kosong'),
+(404, 4, 'kosong'),
+(501, 5, 'kosong'),
+(502, 5, 'kosong'),
+(601, 6, 'kosong'),
+(602, 6, 'kosong');
 
 -- --------------------------------------------------------
 
@@ -133,8 +139,17 @@ CREATE TABLE `reservasi` (
   `checkin` date NOT NULL,
   `checkout` date NOT NULL,
   `harga` float NOT NULL,
-  `currentTime` datetime NOT NULL
+  `currentTime` datetime NOT NULL,
+  `status` enum('Selesai','Belum Selesai') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `reservasi`
+--
+
+INSERT INTO `reservasi` (`no_pesanan`, `username`, `no_kamar`, `checkin`, `checkout`, `harga`, `currentTime`, `status`) VALUES
+(1, 'junedi', 101, '2021-12-09', '2021-12-10', 300000, '2021-12-08 06:32:33', 'Belum Selesai'),
+(15, 'junedi', 101, '2021-12-09', '2021-12-10', 300000, '2021-12-08 06:32:33', 'Belum Selesai');
 
 -- --------------------------------------------------------
 
@@ -144,7 +159,7 @@ CREATE TABLE `reservasi` (
 
 CREATE TABLE `user` (
   `username` varchar(20) NOT NULL,
-  `password` varchar(16) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `first_name` varchar(255) DEFAULT NULL,
   `last_name` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
@@ -158,8 +173,11 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`username`, `password`, `first_name`, `last_name`, `email`, `alamat`, `no_hp`, `role`) VALUES
-('admin', 'admin', 'admin', 'admin', 'admin', 'admin', 'admin', 'admin'),
-('junedi', 'junedi', 'Junedi', 'Juned', 'junedi@gmail.com', 'Jl. Mawar NO.30', '085222221144', 'tamu');
+('admin', '21232f297a57a5a743894a0e4a801fc3', NULL, NULL, NULL, NULL, NULL, 'admin'),
+('aku9012', '61835ca15a2df9c667072b0e6c247d55', 'aku', 'siapa', 'karisma1@gmail.com', NULL, '082119016755', 'tamu'),
+('junedi', '6e8429179524ef0490f99fdcfa3cd629', 'junedi', 'juned', 'junedi12@gmail.com', 'Jl. Mawar No. 123, Kota Bunga', '081112223334', 'tamu'),
+('karis', '7f5aceb76e560ec61d5955b9af76e885', 'karism', 'karisma', 'karism@gmail.com', NULL, '+10829999999', 'tamu'),
+('momogi', '26689f7dbfc8f2d122cfd9518aa85804', 'Momogi', 'Momo', NULL, NULL, NULL, 'tamu');
 
 --
 -- Indexes for dumped tables
@@ -183,7 +201,8 @@ ALTER TABLE `jenis_kamar`
 --
 ALTER TABLE `kamar`
   ADD PRIMARY KEY (`no_kamar`),
-  ADD KEY `id_kamar` (`id_kamar`);
+  ADD KEY `id_kamar` (`id_kamar`),
+  ADD KEY `no_kamar` (`no_kamar`);
 
 --
 -- Indexes for table `reservasi`
@@ -207,7 +226,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `jenis_kamar`
 --
 ALTER TABLE `jenis_kamar`
-  MODIFY `id_kamar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_kamar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT for table `reservasi`
+--
+ALTER TABLE `reservasi`
+  MODIFY `no_pesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Constraints for dumped tables
@@ -233,7 +258,6 @@ ALTER TABLE `reservasi`
   ADD CONSTRAINT `reservasi_ibfk_2` FOREIGN KEY (`no_kamar`) REFERENCES `kamar` (`no_kamar`);
 COMMIT;
 
-ALTER TABLE `reservasi` CHANGE `no_pesanan` `no_pesanan` INT(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
