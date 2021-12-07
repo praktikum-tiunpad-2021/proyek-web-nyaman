@@ -4,13 +4,16 @@
     function TDate() {
     var UserDate = document.getElementById("checkin").value;
     var ToDate = new Date();
+    var UserDate2 = document.getElementById("checkout").value;
 
-    if (new Date(UserDate).getTime() >= ToDate.getTime()) {
-          return true;
-    } else {
-        alert("Mohon ganti Waktu Checkin dengan Tanggal Yang Sesuai");
-        return false;
-    }
+    if (new Date(UserDate).getTime() <= ToDate.getTime()) {
+        alert("Mohon Masukkan Waktu Checkin dengan benar");
+          return false;
+    } else if (new Date(UserDate2).getTime() <= new Date(UserDate).getTime()) {
+          alert("Tanggal Checkout harus lebih besar dari Checkin");
+          return false;
+     }else  
+    return true;
 }
 function Diff() {
     var UserDate = document.getElementById("checkin").value;
@@ -52,15 +55,15 @@ function Diff() {
         <p class="mx-0 text-justify"><?= $detail['deskripsi']; ?></p>
         <br>
         <?php if(session()->get('role') != 'admin'){?>
-            <form action="/ListKamar/book/<?= $kamar['id_kamar'];?>" method="post">
+            <form action="/ListKamar/book/<?= $kamar['id_kamar']; ?>"method="post"onsubmit="return TDate()" >
                 <table>
                     <tr>
                         <td class="col-6"><label for="checkin">Check-in</label></td>
-                        <td><input type="date" name="checkin" id="checkin" class="form-control"onchange="TDate()" ></td>
+                        <td><input type="date" name="checkin" id="checkin" class="form-control"required></td>
                     </tr>
                     <tr>
                         <td><label for="checkout">Check-out</label></td>
-                        <td><input type="date" name="checkout" id="checkout" class="form-control" onchange=" Diff()"></td>
+                        <td><input type="date" name="checkout" id="checkout" class="form-control" required></td>
                     </tr>
                 </table>
                 <br>

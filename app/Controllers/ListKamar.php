@@ -32,7 +32,8 @@ class ListKamar extends BaseController{
         }
         $data=[
             'kamar' =>  $this->ListKamarModel->getListKamar($id_kamar),
-            'detail' => $this->DetailKamarModel->getDetail($id_kamar)
+            'detail' => $this->DetailKamarModel->getDetail($id_kamar),
+            'no' => $this->KamarModel->getNoKamar($id_kamar)
         ];
         //dd($data);
         if(empty($data['detail'])){
