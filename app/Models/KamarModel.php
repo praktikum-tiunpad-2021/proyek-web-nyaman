@@ -14,11 +14,13 @@ class KamarModel extends Model{
             return $this->findAll();
         }
         return $this->where(['id_kamar' => $id_kamar])->first();
-    } public function getAllKamar($id_kamar = false){
+    } 
+    
+    public function getAllKamar($id_kamar = false){
         if($id_kamar == false){
             return $this->findAll();
         }
-        return $this->where(['id_kamar' => $id_kamar])->findAll();;
+        return $this->where(['id_kamar' => $id_kamar])->findAll();
     }
 
 }

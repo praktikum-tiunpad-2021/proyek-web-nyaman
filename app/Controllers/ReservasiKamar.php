@@ -18,6 +18,21 @@ class ReservasiKamar extends BaseController{
         $this->ReservasiKamarModel = new ReservasiKamarModel();
     }
 
+    public function ReservasiUser(){
+        $username = session()->get('username');
+        $db      = \Config\Database::connect();
+        $builder = $db->table('reservasi');
+        $builder->select('reservasi.no_pesanan, reservasi.no_kamar, reservasi.checkin, reservasi.checkout, reservasi.harga, reservasi.status, jenis_kamar.jenis_kamar, jenis_kamar.gambar');
+        $builder->join('kamar', 'reservasi.no_kamar = kamar.no_kamar');
+        $builder->join('jenis_kamar', 'kamar.id_kamar = jenis_kamar.id_kamar');
+        $builder->where('username', $username);
+        $query = $builder->get();
+        $data=[
+            'reservasi' => $query->getResultArray()
+        ];
+        //dd($data);
+        return view('Reservasi/listReservasi', $data);
+    }
     public function book($id_kamar){
         $data=[
             'kamar' =>  $this->ListKamarModel->getListKamar($id_kamar),
@@ -45,7 +60,10 @@ class ReservasiKamar extends BaseController{
             'checkin' => $this->request->getVar('checkin'),
             'checkout' => $this->request->getVar('checkout')
         ]);
-        return redirect()->to(base_url('ReservasiKamar/bukti/'.$no_kamar));
+        $pesanan = $this->ReservasiKamarModel->where(['no_kamar' => $no_kamar])->first();
+        //$nopesan = $pesanan['no_pesanan'];
+        //dd($nopesan);
+        return redirect()->to(base_url('ReservasiKamar/bukti/'.$pesanan['no_pesanan']));
     }
     
     public function bukti($no_pesanan){
@@ -53,6 +71,9 @@ class ReservasiKamar extends BaseController{
             'reservasi' =>  $this->ReservasiKamarModel->getReservasi($no_pesanan)
         ];
         //dd($data);
+        if(empty($data['reservasi'])){
+            throw new \CodeIgniter\Exceptions\PageNotFoundException('reservasi tidak ditemukan');
+        }
         return view('kamar/buktiBayar', $data);
     }
 }

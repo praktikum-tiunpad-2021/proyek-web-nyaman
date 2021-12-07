@@ -9,9 +9,16 @@
             <a href="/list-kamar">List Kamar</a></li>
             <a href="/">Home</a></li>
         <?php } else { ?>
-            <a href="<?= base_url('login/logout'); ?>">Logout</a></li>
-            <a href="/Profil">Profil</a>
-            <?php if(session()->get('username') == 'admin'){?> ?>
+            <div class="dropdown">
+                <button class="dropbtn"><?php echo session()->get('username');?>
+                <i class="fa fa-fw fa-user"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="/Profil">Profil</a>
+                    <a href="<?= base_url('login/logout'); ?>">Logout</a>
+                </div>
+            </div> 
+            <?php if(session()->get('username') == 'admin'){?>
             <div class="dropdown">
                 <button class="dropbtn">Kamar 
                 <i class="fa fa-caret-down"></i>

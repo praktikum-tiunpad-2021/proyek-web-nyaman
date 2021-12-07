@@ -30,6 +30,7 @@ img {
 
 .main {
     margin-top: 40px;
+    min-height: 100vh !important;
 }
 
 /* Ini Breadcrumbs */
@@ -348,9 +349,8 @@ p{
     width: 100%;
     color: #ffffff;
     font-size: 8px;
-
-    /* position: relative;
-    bottom: 0px; */
+    /* position: relative; */
+    bottom: 0px;
 }
 
 /* buat alert */
@@ -411,4 +411,18 @@ fieldset {
     padding: 8px;
     font-weight: lighter;
     border-radius: 8px;
+}
+
+/* isi reservasi */
+.isi-reservasi{
+    border-radius: 25px;
+    border: 1px solid black;
+    background: white;
+    padding: 16px;
+    height: fit-content;
+    margin: 1rem 2rem;
+}
+
+.isi-reservasi p {
+    margin-bottom: 4px;
 }

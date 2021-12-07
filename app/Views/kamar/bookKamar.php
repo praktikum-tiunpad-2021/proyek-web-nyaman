@@ -77,7 +77,6 @@ $checkout = date('Y/m/d',strtotime($_POST['checkout']));
 				</tbody>
 			</table>
 			<center><button type="submit" class="btn btn-success mx-2">Konfirmasi</button></center>
-			<!-- <center><a href="/buktiBayar/<?= $kamar['id_kamar']; ?>" class="btn btn-success mx-2">Konfirmasi</a></center><br> -->
 		</div>
 
 <br><br><br><br>
