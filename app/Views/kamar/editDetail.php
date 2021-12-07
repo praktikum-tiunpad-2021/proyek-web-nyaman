@@ -14,18 +14,29 @@
         <div class="col-4">
             <img src="/assets/img/<?= $kamar['gambar'];?>" alt="gambar" class="img-thumbnail"> 
         </div>
-        <div class="col-8">            
-            <h2><input type="text" name="jenis_kamar" value="<?= $kamar['jenis_kamar']; ?>" class="form-control"></h2>
+        <div class="col-8">
+            <div>           
+                <input type="text" name="jenis_kamar" value="<?= $kamar['jenis_kamar']; ?>" class="form-control <?= ($validation->hasError('jenis_kamar'))? 'is-invalid' : ''; ?>">
+                <div class="invalid-feedback">
+                    <?= $validation->getError('jenis_kamar'); ?>
+                </div>
+            </div> 
             <p class="mx-0 mt-2">
                 <div class="input-group">
                     <div class="input-group-text">RP</div>
-                    <input type="text" name="harga" value="<?= $kamar['harga']; ?>" class="form-control">
+                    <input type="text" name="harga" value="<?= $kamar['harga']; ?>" class="form-control <?= ($validation->hasError('harga'))? 'is-invalid' : ''; ?>">
                     <div class="input-group-text">,00</div>
-
+                    <div class="invalid-feedback">
+                        <?= $validation->getError('harga'); ?>
+                    </div>
                 </div>
+                
             </p>
             <br>
-            <textarea name="detail" class="form-control" rows="3"><?= $detail['deskripsi']; ?></textarea>
+            <textarea name="deskripsi" class="form-control <?= ($validation->hasError('deskripsi'))? 'is-invalid' : ''; ?>" rows="3"><?= $detail['deskripsi']; ?></textarea>
+            <div class="invalid-feedback">
+                <?= $validation->getError('deskripsi'); ?>
+            </div>
             <br>
         </div>
     </div>
@@ -33,19 +44,28 @@
     <div class="row">
         <div class="col-8">
             <h3>Fasilitas</h3>
-            <table class="table table-bordered table-striped mt-2" id="detail">
+            <table class="table table-striped mt-2" id="detail">
                 <tr>
                     <td class="col-5">Luas</td>
                     <td>
                         <div class="input-group">
-                            <input type="text" name="luas_kamar" value="<?= $detail['luas_kamar']; ?>" class="form-control">
+                            <input type="text" name="luas_kamar" value="<?= $detail['luas_kamar']; ?>" class="form-control <?= ($validation->hasError('luas_kamar'))? 'is-invalid' : ''; ?>">
                             <div class="input-group-text">m²</div>
+                            <div class="invalid-feedback">
+                                <?= $validation->getError('luas_kamar'); ?>
+                            </div>
                         </div>
+                        
                     </td>
                 </tr>
                 <tr>
                     <td>Ukuran Ranjang</td>
-                    <td><input type="text" name="ranjang" value="<?= $detail['ranjang']; ?>" class="form-control"></td>
+                    <td>
+                        <input type="text" name="ranjang" value="<?= $detail['ranjang']; ?>" class="form-control <?= ($validation->hasError('ranjang'))? 'is-invalid' : ''; ?>">
+                        <div class="invalid-feedback">
+                            <?= $validation->getError('ranjang'); ?>
+                        </div>
+                    </td>
                 </tr>
                 <tr>
                     <td>Pendingin ruangan dengan pengaturan pribadi</td>

@@ -4,8 +4,7 @@
 <div class="main">
     <h1 class="text-center pt-5">NO KAMAR</h1>
     <hr>
-</div>
-<div class="my-4 px-5">
+    <div class="my-4 px-5">
     <?php if(!empty(session()->getFlashdata('pesan'))){ ?>
         <div class="alert alert-success my-3">
             <?php echo session()->getFlashdata('pesan'); ?>
@@ -26,7 +25,7 @@
                 </div>
                 <div class="col">
                     <label for="id_kamar" class="form-label">Nomor Kamar</label>
-                    <input type="number" name="no_kamar" class="form-control" min=0>
+                    <input type="number" name="no_kamar" class="form-control">
                 </div>
                 <div class="col">
                     <button type="submit">Tambah Kamar</button>
@@ -56,5 +55,4 @@
         </table>
     </div>  
 </div>
-
 <?= $this->endsection('content'); ?>

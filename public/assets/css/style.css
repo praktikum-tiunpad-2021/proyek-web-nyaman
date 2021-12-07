@@ -408,9 +408,10 @@ fieldset {
 /* buat noKamar */
 .addKamar{
     border: 1px solid black;
-    padding: 8px;
+    padding: 16px;
     font-weight: lighter;
     border-radius: 8px;
+    margin-bottom: 2rem;
 }
 
 /* isi reservasi */

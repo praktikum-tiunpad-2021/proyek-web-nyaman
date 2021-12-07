@@ -11,23 +11,38 @@
         <?= csrf_field(); ?>
             <div class="col-12">
                 <label for="jenis_kamar" class="form-label" style="font-weight: bolder;">Nama Kamar</label>
-                <input type="text" class="form-control" name="jenis_kamar" required>
+                <input type="text" class="form-control <?= ($validation->hasError('jenis_kamar'))? 'is-invalid' : ''; ?>" name="jenis_kamar" value="<?= old('jenis_kamar'); ?>">
+                <div class="invalid-feedback">
+                    <?= $validation->getError('jenis_kamar'); ?>
+                </div>
             </div>
             <div class="col-md-4">
                 <label for="harga" class="form-label" style="font-weight: bolder;">Harga</label>
-                <input type="number" min="0" class="form-control" name="harga" required>
+                <input type="number" class="form-control  <?= ($validation->hasError('harga'))? 'is-invalid' : ''; ?>" name="harga" value="<?= old('harga'); ?>">
+                <div class="invalid-feedback">
+                    <?= $validation->getError('harga'); ?>
+                </div>
             </div>
             <div class="col-md-4">
                 <label for="luas_kamar" class="form-label" style="font-weight: bolder;">Luas Kamar</label>
-                <input type="number" min="0" class="form-control" name="luas_kamar" required>
+                <input type="number" class="form-control  <?= ($validation->hasError('luas_kamar'))? 'is-invalid' : ''; ?>" name="luas_kamar" value="<?= old('luas_kamar'); ?>">
+                <div class="invalid-feedback">
+                    <?= $validation->getError('luas_kamar'); ?>
+                </div>
             </div>
             <div class="col-md-4">
                 <label for="ranjang" class="form-label" style="font-weight: bolder;">Jenis Ranjang</label>
-                <input type="text" class="form-control" name="ranjang" required>
+                <input type="text" class="form-control  <?= ($validation->hasError('ranjang'))? 'is-invalid' : ''; ?>" name="ranjang"value="<?= old('ranjang'); ?>">
+                <div class="invalid-feedback">
+                    <?= $validation->getError('ranjang'); ?>
+                </div>
             </div>
             <div class="col-12">
                 <label for="deskripsi" class="form-label" style="font-weight: bolder;">Deskripsi</label>
-                <textarea name="deskripsi" class="form-control" rows="3" required></textarea>
+                <textarea name="deskripsi" class="form-control  <?= ($validation->hasError('deskripsi'))? 'is-invalid' : ''; ?>" rows="3" ><?= old('deskripsi'); ?></textarea>
+                <div class="invalid-feedback">
+                    <?= $validation->getError('deskripsi'); ?>
+                </div>
             </div>
             <div class="">
                 <label for="ac" class="form-label" style="font-weight: bolder;">ac</label>

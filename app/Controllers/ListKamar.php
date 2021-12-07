@@ -41,11 +41,54 @@ class ListKamar extends BaseController{
         return view('kamar/detailKamar', $data);
     }
     public function create(){
-        return view('kamar/createKamar');
+        $data = [
+            'validation' => \Config\Services::validation()
+        ];
+        return view('kamar/createKamar', $data);
     }
 
     public function save(){
         //dd($this->request->getVar());
+        //validasii input
+        if (!$this->validate([
+            'jenis_kamar' => [
+                'rules' => 'required|is_unique[jenis_kamar.jenis_kamar]|alpha_space',
+                'errors' => [
+                    'required' => 'nama kamar harus diisi!',
+                    'is_unique' => 'nama kamar sudah ada!',
+                    'alpha_space' => 'input harus berupa huruf!'
+                ]
+            ],
+            'ranjang' => [
+                'rules' => 'required|alpha_space',
+                'errors' => [
+                    'required' => 'jenis ranjang harus diisi!',
+                    'alpha_space' => 'input harus berupa huruf!'
+                ]
+            ],
+            'deskripsi' => [
+                'rules' => 'required',
+                'errors' => 'deskripsi kamar harus diisi!'
+            ],
+            'harga' => [
+                'rules'=>'required|greater_than[0]',
+                'errors' => [
+                    'required' => 'harga kamar harus diisi!',
+                    'greater_than' => 'harga kamar tidak boleh kurang dari 0!'
+                ]
+            ],
+            'luas_kamar' => [
+                'rules'=>'required|greater_than[0]',
+                'errors' => [
+                    'required' => 'luas kamar harus diisi!',
+                    'greater_than' => 'luas kamar tidak boleh kurang dari 0!'
+                ]
+            ]
+        ])) {
+            $validation = \Config\Services::validation();
+            //dd($validation);
+            return redirect()->to('ListKamar/create')->withInput()->with('validation', $validation );
+        }
         $this->ListKamarModel->save([
             'jenis_kamar' => $this->request->getVar('jenis_kamar'),
             'harga' => $this->request->getVar('harga')
@@ -81,7 +124,8 @@ class ListKamar extends BaseController{
     public function edit($id_kamar){
         $data = [
             'kamar' =>  $this->ListKamarModel->getListKamar($id_kamar),
-            'detail' => $this->DetailKamarModel->getDetail($id_kamar)
+            'detail' => $this->DetailKamarModel->getDetail($id_kamar),
+            'validation' => \Config\Services::validation()
         ];
         
         return view('kamar/editDetail', $data);
@@ -89,6 +133,55 @@ class ListKamar extends BaseController{
 
     public function update($id_kamar){
         //dd($this->request->getVar());
+        
+        //validation
+        //cek kamar
+        $jenisKamarLama = $this->ListKamarModel->getListKamar($id_kamar);
+        //dd($jenisKamarLama);
+        if($jenisKamarLama['jenis_kamar'] == $this->request->getVar('jenis_kamar')){
+            $rulesJenisKamar = 'required|alpha_space';
+        } else{
+            $rulesJenisKamar = 'required|is_unique[jenis_kamar.jenis_kamar]|alpha_space';
+        }
+        if (!$this->validate([
+            'jenis_kamar' => [
+                'rules' => $rulesJenisKamar,
+                'errors' => [
+                    'required' => 'nama kamar harus diisi!',
+                    'is_unique' => 'nama kamar sudah ada!',
+                    'alpha_space' => 'input harus berupa huruf!'
+                ]
+            ],
+            'ranjang' => [
+                'rules' => 'required|alpha_space',
+                'errors' => [
+                    'required' => 'jenis ranjang harus diisi!',
+                    'alpha_space' => 'input harus berupa huruf!'
+                ]
+            ],
+            'deskripsi' => [
+                'rules' => 'required',
+                'errors' => 'deskripsi kamar harus diisi!'
+            ],
+            'harga' => [
+                'rules'=>'required|greater_than[0]',
+                'errors' => [
+                    'required' => 'harga kamar harus diisi!',
+                    'greater_than' => 'harga kamar tidak boleh kurang dari 0!'
+                ]
+            ],
+            'luas_kamar' => [
+                'rules'=>'required|greater_than[0]',
+                'errors' => [
+                    'required' => 'luas kamar harus diisi!',
+                    'greater_than' => 'luas kamar tidak boleh kurang dari 0!'
+                ]
+            ]
+        ])) {
+            $validation = \Config\Services::validation();
+            //dd($validation);
+            return redirect()->to('/ListKamar/edit/'.$id_kamar)->withInput()->with('validation', $validation );
+        }
         $this->ListKamarModel->save([
             'id_kamar' => $id_kamar,
             'jenis_kamar' => $this->request->getVar('jenis_kamar'),
@@ -150,6 +243,20 @@ class ListKamar extends BaseController{
 
     public function tambahNokamar(){
         //dd($this->request->getVar());
+        if (!$this->validate([
+            'no_kamar' => [
+                'rules' => 'required|is_unique[jenis_kamar.jenis_kamar]|greater_than[0]',
+                'errors' => [
+                    'required' => 'no kamar harus diisi!',
+                    'is_unique' => 'no kamar sudah ada!',
+                    'greater_than' => 'no kamar tidak boleh kurang dari 0!'
+                ]
+            ]
+            ])) {
+                    $validation = \Config\Services::validation();
+                    //dd($validation);
+                    return redirect()->to('/ListKamar/tambahNoKamar')->withInput()->with('validation', $validation );
+                }
         $this->KamarModel->save([
             'no_kamar'=>$this->request->getVar('no_kamar'),
             'id_kamar' => $this->request->getVar('id_kamar')

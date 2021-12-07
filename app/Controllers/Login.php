@@ -50,14 +50,84 @@ class Login extends BaseController{
         return view('page/SignIn');
     }
 
+    public function viewSignUp()
+    {
+        $data = [
+            'validation' => \Config\Services::validation()
+        ];
+        return view('page/SignUp', $data);
+    }
+
     public function register(){
         //dd($this->request->getVar());
+        if (!$this->validate([
+            'username' => [
+                'rules' => 'required|is_unique[user.username]|alpha_dash|max_length[20]|min_length[5]',
+                'errors' => [
+                    'required' => 'username harus diisi!',
+                    'is_unique' => 'username sudah terdaftar!',
+                    'alpha_space' => 'input hanya dapat berupa huruf, angka, _, dan -',
+                    'max_length' => 'input harus kurang dari 20 karakter',
+                    'min_length' => 'input harus lebih dari 5 karakter',
+                ]
+            ],
+            'first_name' => [
+                'rules' => 'required|alpha_space',
+                'errors' => [
+                    'required' => 'first name harus diisi!',
+                    'alpha_space' => 'input harus berupa huruf!'
+                ]
+            ],
+            'last_name' => [
+                'rules' => 'required|alpha_space',
+                'errors' => [
+                    'required' => 'last name harus diisi!',
+                    'alpha_space' => 'input harus berupa huruf!'
+                ]
+            ],
+            'email' => [
+                'rules'=>'required|valid_email|is_unique[user.email]',
+                'errors' => [
+                    'required' => 'email kamar harus diisi!',
+                    'valid_email' => 'masukkan alamat email yang benar!',
+                    'is_unique' => 'alamat email sudah terdartar!',
+                ]
+            ],
+            'password' => [
+                'rules'=>'required|max_length[16]|min_length[8]',
+                'errors' => [
+                    'required' => 'password harus diisi!',
+                    'max_length'  => 'password harus berisi 8-16 karakter!', 
+                    'min_length' => 'password harus berisi 8-16 karakter!'
+                ]
+            ],
+            'confirm' => [
+                'rules'=>'required|matches[password]',
+                'errors' => [
+                    'required' => 'password harus diisi!',
+                    'matches' => 'password doesnt match!'
+                ]
+            ],
+            'no_hp' => [
+                'rules'=>'required|max_length[13]|min_length[10]|is_unique[user.no_hp]',
+                'errors' => [
+                    'required' => 'nomor hp kamar harus diisi!',
+                    'min_length' => 'masukkan nomor hp yang benar!',
+                    'max_length' => 'masukkan nomor hp yang benar!',
+                    'is_unique' => 'nomor hp sudah terdartar!',
+                ]
+            ]
+        ])) {
+            $validation = \Config\Services::validation();
+            //dd($validation);
+            return redirect()->to(base_url('/Sign-Up'))->withInput()->with('validation', $validation );
+        }
         $this->LoginModel->save([
             'username' => $this->request->getVar('username'),
             'password' => md5($this->request->getVar('password')),
-            'first_name' => $this->request->getVar('fname'),
-            'last_name' => $this->request->getVar('lname'),
-            'no_hp' => $this->request->getVar('phone'),
+            'first_name' => $this->request->getVar('first_name'),
+            'last_name' => $this->request->getVar('last_name'),
+            'no_hp' => $this->request->getVar('no_hp'),
             'email' => $this->request->getVar('email'),
             'role' => 'tamu'
         ]);

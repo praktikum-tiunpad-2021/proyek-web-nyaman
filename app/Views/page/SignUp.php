@@ -16,25 +16,48 @@
                 <form action="Login/register" method="post">
                     <h1 class="text-center">Create Account</h1><br>
                     <div class="form">
-                        <label for="fname">First Name
-                            <input type="text"name="fname"id="fname" class="form-control" required></label>
-                        <label for="lname">Last Name
-                            <input type="text"name="lname"id="lname" class="form-control" required></label>
+                        <label for="first_name">First Name
+                        <input type="text"name="first_name"id="first_name" class="form-control <?= ($validation->hasError('first_name'))? 'is-invalid' : ''; ?>" value="<?= old('first_name'); ?>">
+                        <div class="invalid-feedback">
+                            <?= $validation->getError('first_name'); ?>
+                        </div>
+                        </label>
+                        <label for="last_name">Last Name
+                        <input type="text"name="last_name"id="last_name" class="form-control <?= ($validation->hasError('last_name'))? 'is-invalid' : ''; ?>" value="<?= old('last_name'); ?>">
+                        <div class="invalid-feedback">
+                            <?= $validation->getError('last_name'); ?>
+                        </div>
+                        </label>
                     </div><br>
 
                     <label for="email">Email Address</label>
-                    <input type="email" name="email" id="email" class="form-control" required><br>
+                    <input type="text" name="email" class="form-control <?= ($validation->hasError('email'))? 'is-invalid' : ''; ?>" value="<?= old('email'); ?>">
+                    <div class="invalid-feedback">
+                        <?= $validation->getError('email'); ?>
+                    </div>
+                    <br>
                     <label for="username">Username</label>
-                    <input type="text" name="username" class="form-control" required><br>
-
+                    <input type="text" name="username" class="form-control <?= ($validation->hasError('username'))? 'is-invalid' : ''; ?>" value="<?= old('username'); ?>">
+                    <div class="invalid-feedback">
+                        <?= $validation->getError('username'); ?>
+                    </div>
+                    <br>
                     <div class="form">
                         <label for="password">Password
-                            <input type="password"name="password"id="password" class="form-control" required></label>
+                            <input type="password"name="password"id="password" class="form-control <?= ($validation->hasError('password'))? 'is-invalid' : ''; ?>">
+                            <div class="invalid-feedback">
+                                <?= $validation->getError('password'); ?>
+                            </div>
+                        </label>
                         <label for="confirm">Confirm Password
-                            <input type="password"name="confirm"id="confirm" class="form-control" required></label>
+                            <input type="password"name="confirm"id="confirm" class="form-control <?= ($validation->hasError('confirm'))? 'is-invalid' : ''; ?>">
+                            <div class="invalid-feedback">
+                            <?= $validation->getError('confirm'); ?>
+                        </div>
+                        </label>
                     </div><br>
                     
-                    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+                    <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
                     <script type="text/javascript">
                         $(function () {
                             $("#submit").click(function () {
@@ -47,7 +70,7 @@
                                 return true;
                             });
                         });
-                    </script>
+                    </script> -->
 
                     <input type="checkbox" onclick="myFunction()"> Show password
                     <label for=""></label><br><br>
@@ -62,8 +85,12 @@
                         }
                     </script>
 
-                    <label for="phone">Phone Number</label>
-                    <input type="text" name="phone" id="phone" class="form-control" required><br>
+                    <label for="no_hp">Phone Number</label>
+                    <input type="text" name="no_hp" id="no_hp" class="form-control <?= ($validation->hasError('no_hp'))? 'is-invalid' : ''; ?>">
+                    <div class="invalid-feedback">
+                        <?= $validation->getError('no_hp'); ?>
+                    </div>
+                    <br>
 
                     <p style="font-size: 13px;">By creating an account, you agree with our <u><a href="T&C" style="color: #fff;">Terms & Conditions</a></u> and <u><a href="PP" style="color: #fff;">Privacy Policy</a></u>.</p>
 
