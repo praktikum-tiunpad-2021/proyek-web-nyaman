@@ -14,6 +14,7 @@
                   <a href="#">
                     <img src="/assets/img/profil.jpg" class="rounded-circle">
                     <!-- <img src="/images/" class="rounded-circle"> -->
+                    <input type="file" class="form-control" name="profile_photo" style="padding-bottom:0px;">
                   </a>
                 </div>
               </div>
