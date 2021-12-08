@@ -18,7 +18,7 @@
                     <a href="<?= base_url('login/logout'); ?>">Logout</a>
                 </div>
             </div>
-            <a href="/reservasi">Reservasi</a></li> 
+            
             <?php if(session()->get('username') == 'admin'){?>
             <div class="dropdown">
                 <button class="dropbtn">Kamar 
@@ -31,6 +31,7 @@
                 </div>
             </div> 
             <?php } else {?>
+                <a href="/reservasi">Reservasi</a></li> 
                 <a href="/list-kamar">List Kamar</a></li>
             <?php } ?>
             <a href="/">Home</a>
