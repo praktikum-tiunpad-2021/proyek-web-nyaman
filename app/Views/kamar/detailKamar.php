@@ -55,27 +55,29 @@ function Diff() {
             <img src="/assets/img/<?= $kamar['gambar'];?>" alt="gambar" class="img-thumbnail"> 
         </div>
         <div class="col-8">
-        <h2><?= $kamar['jenis_kamar']; ?></h2>
-        <p class="mx-0 mt-2">RP <?= $kamar['harga']; ?></p>
-        <br>
-        <p class="mx-0 text-justify"><?= $detail['deskripsi']; ?></p>
-        <br>
-        <?php if(session()->get('role') != 'admin'){?>
-            <form action="/ListKamar/book/<?= $kamar['id_kamar']; ?>"method="post"onsubmit="return TDate()" >
-                <table>
-                    <tr>
-                        <td class="col-6"><label for="checkin">Check-in</label></td>
-                        <td><input type="date" name="checkin" id="checkin" class="form-control"required></td>
-                    </tr>
-                    <tr>
-                        <td><label for="checkout">Check-out</label></td>
-                        <td><input type="date" name="checkout" id="checkout" class="form-control" required></td>
-                    </tr>
-                </table>
-                <br>
-                <input type="submit" value="Book" class="btn btn-success mx-2">
-            </form>
-        <?php } ?>
+            <h2><?= $kamar['jenis_kamar']; ?></h2>
+            <p class="mx-0 mt-2">RP <?= $kamar['harga']; ?></p>
+            <br>
+            <p class="mx-0 text-justify"><?= $detail['deskripsi']; ?></p>
+            <br>
+            <?php if(session()->get('role') != 'admin'){?>
+                <form action="/ListKamar/book/<?= $kamar['id_kamar']; ?>"method="post"onsubmit="return TDate()" >
+                    <table>
+                        <tr>
+                            <td class="col-6"><label for="checkin">Check-in</label></td>
+                            <td><input type="date" name="checkin" id="checkin" class="form-control" required <?php if($jumlahKamar == 0){ echo 'disabled';} else{ echo '';}  ?>></td>
+                        </tr>
+                        <tr>
+                            <td><label for="checkout">Check-out</label></td>
+                            <td><input type="date" name="checkout" id="checkout" class="form-control" required <?php if($jumlahKamar == 0){ echo 'disabled';} else{ echo '';}  ?>></td>
+                        </tr>
+                    </table>
+                    <br>
+                    <input type="submit" value="Book" class="btn btn-success mx-2" <?php if($jumlahKamar == 0){ echo 'disabled';} else{ echo '';}  ?>>
+                </form>
+            <?php } ?>
+            <br>
+            <h5 class="mx-2">Jumlah Kamar yang tersedia : <?= $jumlahKamar; ?></h5>
         </div>
     </div>
     <hr class="my-3">
@@ -138,8 +140,6 @@ function Diff() {
                     ?>
                 </tr>
                  <?php endforeach; ?>
-                 <td>Jumlah Kamar</td>
-                    <td><input type="text" name="jumlah" id="jumlah" style="border: none;" value="<?php echo $i ?>"readonly</td>
             </table>
         </div>
     </div>

@@ -25,6 +25,11 @@ class ListKamar extends BaseController{
 
     public function DetailKamar($id_kamar)
     {   
+        $db      = \Config\Database::connect();
+        $builder = $db->table('kamar');
+        $builder->where(['status' => 'kosong', 'id_kamar' => $id_kamar]);
+        $query = $builder->countAllResults();
+        //dd($query);
         if(session()->get('username') == ''){
             session()->setFlashdata('gagal', 'Silahkan Login terlebih dahulu!!');
             return redirect()->to(base_url('/Sign-In'));
@@ -32,7 +37,8 @@ class ListKamar extends BaseController{
         $data=[
             'kamar' =>  $this->ListKamarModel->getListKamar($id_kamar),
             'detail' => $this->DetailKamarModel->getDetail($id_kamar),
-            'no'=>$this->KamarModel -> getAllKamar($id_kamar)
+            'no'=>$this->KamarModel -> getAllKamar($id_kamar),
+            'jumlahKamar' => $query
         ];
         //dd($data);
         if(empty($data['detail'])){

@@ -45,12 +45,13 @@ class ReservasiKamar extends BaseController{
         //dd($this->request->getVar());
         $kamar = $this->ListKamarModel->where(['jenis_kamar' => $this->request->getVar('jenis_kamar')])->first();
         $id_kamar = $kamar['id_kamar'];
-        $kamar2 = $this->KamarModel->where(['id_kamar' => $id_kamar])->first();
+        $kamar2 = $this->KamarModel->where(['id_kamar' => $id_kamar, 'status' => 'kosong'])->first();
         $no_kamar = $kamar2['no_kamar'];
-        $data= [
-            'id_kamar' => $id_kamar,
-            'no_kamar' => $no_kamar
-        ];
+        //buat ngecek data yg diambil
+        // $data= [
+        //     'id_kamar' => $id_kamar,
+        //     'no_kamar' => $no_kamar
+        // ];
         //dd($data);
         $this->ReservasiKamarModel->save([
             'username' => $username,
@@ -61,8 +62,12 @@ class ReservasiKamar extends BaseController{
             'checkout' => $this->request->getVar('checkout'),
             'status' => 'Belum Selesai'
         ]);
+        $this->KamarModel->save([
+            'no_kamar' => $no_kamar,
+            'status' => 'terisi'
+        ]);
         $pesanan = $this->ReservasiKamarModel->where(['no_kamar' => $no_kamar])->first();
-        //dd($nopesan);
+        //dd($pesanan);
         return redirect()->to(base_url('ReservasiKamar/bukti/'.$pesanan['no_pesanan']));
     }
     
