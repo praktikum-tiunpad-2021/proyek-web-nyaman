@@ -23,6 +23,7 @@
                     <td>Harga</td>
                     <td>Waktu Pemesanan</td>
                     <td>Status</td>
+                    <td>Aksi</td>
                 </tr>
             </thead>   
             <tbody>
@@ -37,6 +38,11 @@
                     <td><?= $r['harga']; ?></td>
                     <td><?= $r['currentTime']; ?></td>
                     <td><?= $r['status']; ?></td>
+                    <td>
+                        <form action="ReservasiKamar/Checkout/<?= $r['no_pesanan'];?>" method="post">
+                            <button type="submit" onclick="return confirm('yakin?');"  class="btn btn-success">Check out</button>
+                        </form>
+                    </td>
                 </tr>
                 <?php endforeach; ?>
             </tbody> 

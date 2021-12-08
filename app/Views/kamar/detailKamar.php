@@ -17,19 +17,7 @@
           alert("Tanggal Checkout harus lebih besar dari Checkin");
           return false;
      }else 
-      
      document.getElementById('jumlah').value = --x;
-    return true;
-}
-function Diff() {
-    var UserDate = document.getElementById("checkin").value;
-    var UserDate2 = document.getElementById("checkout").value;
-    var ToDate = new Date();
-
-    if (new Date(UserDate2).getTime() <= new Date(UserDate).getTime()) {
-          alert("Tanggal Checkout harus lebih besar dari Checkin");
-          return false;
-     }
     return true;
 }
 </script>

@@ -40,7 +40,7 @@
                     <tr>
                         <td>No Kamar</td>
                         <td>id Kamar</td>
-                        <td>aksi</td>
+                        <td>status</td>
                     </tr>
                 </thead>   
                 <tbody>
@@ -48,7 +48,7 @@
                     <tr>
                         <td><?= $no['no_kamar']; ?></td>
                         <td><?= $no['jenis_kamar']; ?></td>
-                        <td></td>
+                        <td><?= $no['status']; ?></td>
                     </tr>
                     <?php endforeach; ?>
                 </tbody> 

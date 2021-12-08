@@ -96,4 +96,19 @@ class ReservasiKamar extends BaseController{
         //dd($data);
         return view('Reservasi/dataReservasi', $data);
     }
+
+    public function checkout($no_pesanan){
+        $kamar = $this->ReservasiKamarModel->where(['no_pesanan' => $no_pesanan])->first();
+        $nokamar = $this->KamarModel->where(['no_kamar' => $kamar['no_kamar']])->first();
+        //dd($nokamar);
+        $this->ReservasiKamarModel->save([
+            'no_pesanan' => $no_pesanan,
+            'status' => 'Selesai'
+        ]);
+        $this->KamarModel->save([
+            'no_kamar' => $nokamar['no_kamar'],
+            'status' => 'kosong'
+        ]);
+        return redirect()->to(base_url('/data-reservasi'));
+    }
 }

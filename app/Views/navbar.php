@@ -18,7 +18,6 @@
                     <a href="<?= base_url('login/logout'); ?>">Logout</a>
                 </div>
             </div>
-            
             <?php if(session()->get('username') == 'admin'){?>
             <div class="dropdown">
                 <button class="dropbtn">Kamar 
