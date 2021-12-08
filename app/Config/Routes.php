@@ -46,6 +46,7 @@ $routes->get('/bookKamar/(:any)', 'ListKamar::book/$1');
 $routes->get('/bukti-bayar/(:any)', 'ReservasiKamar::bukti/$1');
 $routes->get('/no-kamar', 'ListKamar::noKamar');
 $routes->get('/reservasi', 'ReservasiKamar::ReservasiUser');
+$routes->get('/data-reservasi', 'ReservasiKamar::dataReservasi');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

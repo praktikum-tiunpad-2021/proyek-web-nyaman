@@ -1,7 +1,6 @@
 <?= $this->extend('/base'); ?>
 <?= $this->section('content'); ?>
 
-
 <?php echo link_tag('assets/css/profil.css');?>
 
 <div class="main">
@@ -109,4 +108,5 @@
     </div>
   </div>
 </div>
+<br>
 <?= $this->endSection('content'); ?>

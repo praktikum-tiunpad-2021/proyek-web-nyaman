@@ -9,7 +9,11 @@
         <div class="col-11 mx-auto">
         <form class="row g-3" action=/ListKamar/save method="post">
         <?= csrf_field(); ?>
-            <div class="col-12">
+            <div class="col-6">
+                <label for="gambar_kamar" class="form-label" style="font-weight: bolder;">Gambar Kamar</label>
+                <input type="file" class="form-control" name="gambar_kamar" required>
+            </div>
+            <div class="col-6">
                 <label for="jenis_kamar" class="form-label" style="font-weight: bolder;">Nama Kamar</label>
                 <input type="text" class="form-control <?= ($validation->hasError('jenis_kamar'))? 'is-invalid' : ''; ?>" name="jenis_kamar" value="<?= old('jenis_kamar'); ?>">
                 <div class="invalid-feedback">

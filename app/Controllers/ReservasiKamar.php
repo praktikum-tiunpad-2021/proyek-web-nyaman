@@ -81,4 +81,19 @@ class ReservasiKamar extends BaseController{
         }
         return view('kamar/buktiBayar', $data);
     }
+    
+    public function dataReservasi(){
+        $db      = \Config\Database::connect();
+        $builder = $db->table('reservasi');
+        // $builder->select('*');
+        $builder->select('reservasi.no_pesanan, reservasi.username, reservasi.no_kamar, reservasi.checkin, reservasi.checkout, reservasi.harga, reservasi.currentTime, reservasi.status, jenis_kamar.jenis_kamar');
+        $builder->join('kamar', 'reservasi.no_kamar = kamar.no_kamar');
+        $builder->join('jenis_kamar', 'kamar.id_kamar = jenis_kamar.id_kamar');
+        $query = $builder->get();
+        $data=[
+            'reservasi' => $query->getResultArray()
+        ];
+        //dd($data);
+        return view('Reservasi/dataReservasi', $data);
+    }
 }

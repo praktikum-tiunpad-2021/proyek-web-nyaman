@@ -27,6 +27,7 @@
                 <div class="dropdown-content">
                 <a href="/list-kamar">List Kamar</a>
                 <a href="/no-kamar">Nomor Kamar</a>
+                <a href="/data-reservasi">Data Reservasi</a>
                 </div>
             </div> 
             <?php } else {?>

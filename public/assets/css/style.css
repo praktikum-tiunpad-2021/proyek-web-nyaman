@@ -60,7 +60,7 @@ ul.breadcrumb {
 
 .navbar {
     position: fixed;
-    background-color: #333;
+    background-color: black;
     width: 100%;
     top: 0%;
     height: max-content;

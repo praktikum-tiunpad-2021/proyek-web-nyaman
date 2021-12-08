@@ -1,8 +1,10 @@
 <?= $this->extend('/base'); ?>
 <?= $this->section('content'); ?>
 
-
-    
+<style>
+    body {
+        font-size: 15px;
+    }
     td {
         padding-bottom: 5px;
         font-size: 15px;
@@ -26,7 +28,7 @@
     </div>
     <hr>
     <br>
-    <h1 class="text-center" style="font-weight: bold;">Bukti Pemesanan Kamar</h1>
+    <h1 class="text-center" style="font-weight: bold;">BUKTI PEMESANAN KAMAR</h1>
     <div class="container mt-3">
         <table>
             <tbody>
@@ -56,7 +58,7 @@
             <table>
                 <thead>
                     <td>
-                        <u><h3>Detail Pesanan</h3></u>
+                        <u><h3 style="padding-bottom: 5px;">Detail Pesanan</h3></u>
                     </td>
                 </thead>
                 <tbody>
@@ -82,7 +84,7 @@
             <table>
                 <thead>
                     <td>
-                        <u><h3>Detail Pembayaran</h3></u>
+                        <u><h3 style="padding-bottom: 5px;">Detail Pembayaran</h3></u>
                     </td>
                 </thead>
                 <tbody>
@@ -99,8 +101,8 @@
                 </tbody>
             </table>
         </fieldset><br>
-        <p class="mx-0 text-justify" style="font-size:15px;"><b>Note:</b> Mohon menunjukkan Voucher Hotel ini kepada resepsionis atau reservasi saat check-in.</p>
-        <br><br>
+        <p class="mx-0 text-justify" style="font-size:13px;"><b>Note:</b> Mohon menunjukkan Voucher Hotel ini kepada resepsionis atau reservasi saat check-in.</p>
+        <br><br><br><br><br>
     </div>
     </div>
 </body>
