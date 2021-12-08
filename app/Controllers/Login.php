@@ -21,6 +21,13 @@ class Login extends BaseController{
         return view('page/Profil', $data);
     }
     public function editProfil(){
+        // $profilePhoto = $this->request->getFile('profile_photo');
+        // $profilePhoto->move(WRITEPATH.'images')
+        
+        // $this->user->save([
+        // 'profilePhoto' => $profilePhoto->getName(),
+        // ]);
+
         if(session()->get('username') == ''){
             session()->setFlashdata('gagal', 'Silahkan Login terlebih dahulu!!');
             return redirect()->to(base_url('/Sign-In'));

@@ -13,6 +13,7 @@
                 <div class="card-profile-image">
                   <a href="#">
                     <img src="/assets/img/profil.jpg" class="rounded-circle">
+                    <!-- <img src="/images/" class="rounded-circle"> -->
                   </a>
                 </div>
               </div>
@@ -97,7 +98,7 @@
                   </div>
                 </div>
                 <hr class="my-4">
-                <button type="submit" class="btn btn-success">Simpan</button>
+                <button type="submit" class="btn btn-success" style="font-weight:lighter;">Simpan</button>
               </form>
             </div>
           </div>
@@ -105,4 +106,5 @@
       </div>
     </div>
   </div>
+  <br>
 <?= $this->endSection('content'); ?>

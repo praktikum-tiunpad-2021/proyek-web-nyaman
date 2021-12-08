@@ -102,7 +102,6 @@
             </table>
         </fieldset><br>
         <p class="mx-0 text-justify" style="font-size:13px;"><b>Note:</b> Mohon menunjukkan Voucher Hotel ini kepada resepsionis atau reservasi saat check-in.</p>
-        <br><br><br><br><br>
     </div>
     </div>
 </body>
