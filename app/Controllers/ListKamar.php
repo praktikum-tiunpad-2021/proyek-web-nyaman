@@ -241,9 +241,10 @@ class ListKamar extends BaseController{
         $data=[
             'noKamar' => $this->KamarModel->getNoKamar(),
             'kamar' => $this->ListKamarModel->getListKamar(),
-            'kamarno' => $query->getResultArray()
+            'kamarno' => $query->getResultArray(),
+            'validation' => \Config\Services::validation()
         ];
-        // dd($data);
+        //dd($data);
         return view('kamar/noKamar', $data);
     }
 
@@ -261,7 +262,7 @@ class ListKamar extends BaseController{
             ])) {
                     $validation = \Config\Services::validation();
                     //dd($validation);
-                    return redirect()->to('/ListKamar/tambahNoKamar')->withInput()->with('validation', $validation );
+                    return redirect()->to('ListKamar/noKamar')->withInput()->with('validation', $validation );
                 }
         $this->KamarModel->save([
             'no_kamar'=>$this->request->getVar('no_kamar'),

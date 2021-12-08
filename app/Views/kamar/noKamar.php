@@ -31,7 +31,10 @@
                 </div>
                 <div class="col">
                 <label for="id_kamar" class="form-label" style="font-weight: bold;">Nomor Kamar</label>
-                    <input type="number" name="no_kamar" class="form-control">
+                    <input type="number" name="no_kamar" class="form-control <?= ($validation->hasError('no_kamar'))? 'is-invalid' : ''; ?>">
+                    <div class="invalid-feedback">
+                        <?= $validation->getError('no_kamar'); ?>
+                    </div>
                 </div>
                 <div class="col">
                     <br>
@@ -46,8 +49,8 @@
                 <thead style="font-weight: bold;">
                     <tr>
                         <td>No. Kamar</td>
-                        <td>ID Kamar</td>
-                        <td>Aksi</td>
+                        <td>Jenis Kamar</td>
+                        <td>Status</td>
                     </tr>
                 </thead>   
                 <tbody>
