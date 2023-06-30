@@ -2,13 +2,13 @@
 <br />
 <p align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="https://via.placeholder.com/80/FFFFFF/808080?text=Logo" alt="Logo" width="80" height="80">
+    <img src="public/assets/img/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Judul Proyek</h3>
+  <h3 align="center">NYAMAN</h3>
 
   <p align="center">
-    Deskripsi Proyek
+    Website untuk Reservasi Kamar Hotel Nyaman
   </p>
 </p>
 
@@ -27,35 +27,33 @@
 
 <!-- Anggota Tim -->
 ## Anggota Tim
-| NPM           | Name        |
-| ------------- |-------------|
-| 140810xx00xx  | John Doe    |
-| 140810xx00xx  | Jane Doe    |
-| 140810xx00xx  | Janie Doe   |
+| NPM           | Name                              |
+| ------------- |-----------------------------------|
+| 140810200043  | Johanes Bagus Prasetyo            |
+| 140810200047  | Kharisma Fitri Nurunnisa Siahaan  |
+| 140810200065  | Hanifan Ayusti Khairunnisa        |
 
 <!-- Fungsi -->
 ## Fungsi
 
-TO;DO
+Website ini berfungsi untuk melakukan reservasi kamar di Hotel Nyaman.
 
 <!-- Tujuan -->
 ## Tujuan
 
-TO;DO
+Mempermudah pengguna dalam proses pemesanan kamar hotel secara online melalui website.
 
 <!-- Target Pengguna -->
 ## Target Pengguna
 
-TO;DO
+Masyarakat umum yang sedang bepergian dan membutuhkan kamar hotel.
 
 <!-- Mockup Kasar -->
 ## Mockup Kasar
 
-TO;DO
-
-Gambar mockup di sini atau [link figma](https://figma.com/).
+https://www.figma.com/file/oiCZgjMfT5uTzMdBUxGie9/Nyaman?node-id=3%3A4
 
 <!-- Skema Database -->
 ## Skema Database
 
-TO;DO
+<img src="ERD.png"  width="480" height="360">
